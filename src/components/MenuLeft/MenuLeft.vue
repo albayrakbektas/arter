@@ -30,52 +30,25 @@
           </p>
         </router-link>
       </div>
-      <div class="menu-left-container-header menu-container-content"></div>
+      <div class="menu-left-container-header menu-container-content">
+        <MainContent />
+      </div>
       <div class="menu-left-container-footer menu-container-footer bg-linear">
-        <div class="social-media-icon-container">
-          <router-link
-            v-for="(item, index) of socialMediaIconList"
-            :key="index"
-            :to="item.href"
-          >
-            <i :class="item.name"></i>
-          </router-link>
-        </div>
+        <FooterIcons />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ProfileAvatar from "@/components/ProfileAvatar";
+import ProfileAvatar from "@/components/MenuLeft/ProfileAvatar";
+import FooterIcons from "@/components/MenuLeft/FooterIcons";
+import MainContent from "@/components/MenuLeft/MainContent";
 export default {
   name: "MenuLeft",
-  components: { ProfileAvatar },
+  components: { MainContent, FooterIcons, ProfileAvatar },
   data() {
-    return {
-      socialMediaIconList: [
-        {
-          name: "fa-brands fa-linkedin-in",
-          href: "#.",
-        },
-        {
-          name: "fa-brands fa-dribbble",
-          href: "#.",
-        },
-        {
-          name: "fa-brands fa-behance",
-          href: "#.",
-        },
-        {
-          name: "fa-brands fa-github",
-          href: "#.",
-        },
-        {
-          name: "fa-brands fa-twitter",
-          href: "#.",
-        },
-      ],
-    };
+    return {};
   },
   methods: {
     changeMenu() {
@@ -122,6 +95,7 @@ export default {
 }
 .menu-container-header {
   position: absolute;
+  z-index: 9;
   left: 0;
   right: 0;
   padding: 30px;
@@ -129,8 +103,10 @@ export default {
 .menu-container-content {
   display: flex;
   height: 100vh;
-  align-items: center;
-  overflow: hidden;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .menu-left-container-footer {
   padding: 0 35px;
@@ -139,21 +115,7 @@ export default {
   display: grid;
   align-items: center;
 }
-.language-container {
-  .lang-avatar:first-child {
-    margin-bottom: 10px;
-  }
-}
 .material-symbols-outlined {
   padding: 30px;
-}
-.social-media-icon-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: space-evenly;
-  a {
-    display: flex;
-    justify-content: center;
-  }
 }
 </style>

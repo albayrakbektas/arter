@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import NavigationList from "@/components/NavigationList";
+import NavigationList from "@/components/MenuRight/NavigationList";
 export default {
   name: "MenuRightNav",
   components: { NavigationList },

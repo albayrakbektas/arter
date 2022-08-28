@@ -4,7 +4,13 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    loadingPage: true,
+    isLeftMenuActive: false,
+    isRightMenuActive: false,
+    isSubItems: false,
+    isSubItem: false,
+  },
   getters: {},
   mutations: {},
   actions: {},

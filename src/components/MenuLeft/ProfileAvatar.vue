@@ -1,7 +1,7 @@
 <template>
   <div class="profile-avatar-container">
     <router-link to="#.">
-      <img src="../assets/img/face-1.jpeg" alt="profile picture" />
+      <img src="../../assets/img/face-1.jpeg" alt="profile picture" />
     </router-link>
     <div class="status-dot"></div>
     <div class="status-dot-border"></div>
@@ -43,7 +43,7 @@ export default {
   height: 0;
   width: 0;
   z-index: 99;
-  animation: border 1s infinite;
+  //animation: border 1s infinite;
 }
 @keyframes border {
   0% {

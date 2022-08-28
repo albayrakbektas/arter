@@ -44,8 +44,8 @@
 </template>
 
 <script>
-import LanguageAvatar from "@/components/LanguageAvatar";
-import MenuRightNav from "@/components/MenuRightNav";
+import LanguageAvatar from "@/components/MenuRight/LanguageAvatar";
+import MenuRightNav from "@/components/MenuRight/MenuRightNav";
 export default {
   name: "MenuRight",
   components: { MenuRightNav, LanguageAvatar },
