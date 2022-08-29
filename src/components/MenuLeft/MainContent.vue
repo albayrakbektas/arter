@@ -76,17 +76,13 @@ export default {
           "deg,rgb(0, 0, 0) 360deg)";
       }
     },
-    // transform(e) {
-    //   console.log(document.documentElement.scrollTop);
-    //   e.target.style.transform = "translate3d(0px, 0px, 0px)";
-    // },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .menu-left-main-content {
-  padding: 230px 0 53px;
+  padding-top: 230px;
   height: 100vh;
   width: 75%;
   margin: 0 auto;

@@ -26,6 +26,11 @@ body {
   width: 100vw;
   position: relative;
 }
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 0 30px;
+}
 h1,
 h2,
 h3,
@@ -35,6 +40,8 @@ h6 {
   font-weight: 700;
   color: #fafafc;
   margin-bottom: 0;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
 }
 h6 {
@@ -91,6 +98,35 @@ a {
     rgba(37, 37, 50, 0.98) 0%,
     rgba(35, 35, 45, 0.98) 100%
   );
+}
+.bg-img {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  background-position: center;
+  height: 400px;
+  background-size: cover;
+}
+.bg-img-overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    180deg,
+    rgba(30, 30, 40, 0.93) 0%,
+    rgba(30, 30, 40, 0.96) 70%,
+    rgba(30, 30, 40, 0.99) 80%,
+    #1e1e28 100%
+  );
+}
+.row {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.p-lr-12 {
+  padding-left: 12px;
+  padding-right: 12px;
 }
 </style>
 
