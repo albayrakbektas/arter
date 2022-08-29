@@ -18,6 +18,8 @@ body {
   margin: 0;
   box-sizing: border-box;
   width: 100vw;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -127,6 +129,12 @@ a {
 .p-lr-12 {
   padding-left: 12px;
   padding-right: 12px;
+}
+ul {
+  padding-inline-start: 0;
+}
+li {
+  list-style: none;
 }
 </style>
 
