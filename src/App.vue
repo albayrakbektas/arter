@@ -135,12 +135,16 @@ ul {
 li {
   list-style: none;
 }
+.disabled-nav {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
 </style>
 
 <script>
 import LandingPage from "@/views/LandingPage";
 import MainView from "@/views/MainView";
-import MainHeader from "@/components/MainHeader";
+import MainHeader from "@/components/Header/MainHeader";
 export default {
   components: { MainHeader, MainView, LandingPage },
   methods: {

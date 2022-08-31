@@ -1,20 +1,22 @@
 <template>
-  <div class="recommendation-card-container">
-    <div class="card-content">
-      <img :src="card.imgSrc" :alt="card.imgAlt" />
-      <h5>{{ card.title }}</h5>
-      <h3>{{ card.subTitle }}</h3>
-      <p>{{ card.content }}</p>
-    </div>
-    <div class="star-container">
-      <ul>
-        <li v-for="item in card.starCount" :key="item.index">
-          <i class="fa-solid fa-star"></i>
-        </li>
-        <li v-for="item in 5 - card.starCount" :key="item.index">
-          <i class="fa-solid fa-star empty-star"></i>
-        </li>
-      </ul>
+  <div class="recommendation-card-container-parent">
+    <div class="recommendation-card-container">
+      <div class="card-content">
+        <img :src="card.imgSrc" :alt="card.imgAlt" />
+        <h5>{{ card.title }}</h5>
+        <h3>{{ card.subTitle }}</h3>
+        <p>{{ card.content }}</p>
+      </div>
+      <div class="star-container">
+        <ul>
+          <li v-for="item in card.starCount" :key="item.index">
+            <i class="fa-solid fa-star"></i>
+          </li>
+          <li v-for="item in 5 - card.starCount" :key="item.index">
+            <i class="fa-solid fa-star empty-star"></i>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -37,11 +39,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.recommendation-card-container-parent {
+  position: relative;
+  margin-right: 30px;
+  width: 343px;
+  flex-shrink: 0;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
 .recommendation-card-container {
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
   padding: 30px;
-  margin-bottom: 30px;
   position: relative;
+  opacity: 1;
 }
 img {
   height: 65px;
@@ -50,6 +60,7 @@ img {
   position: absolute;
   right: 15px;
   top: -15px;
+  z-index: 9999;
 }
 h5 {
   font-size: 14px;
