@@ -9,6 +9,7 @@
         <ExperienceCards />
         <MyServices />
         <PricePlans />
+        <RecommendationCards />
       </div>
     </div>
   </div>
@@ -19,13 +20,18 @@ import FirstSection from "@/components/Home/top/FirstSection";
 import ExperienceCards from "@/components/Home/experience/ExperienceCards";
 import MyServices from "@/components/Home/services/MyServices";
 import PricePlans from "@/components/Home/prices/PricePlans";
+import RecommendationCards from "@/components/Home/recommendation/RecommendationCards";
 export default {
   name: "HomeView",
-  components: { PricePlans, MyServices, ExperienceCards, FirstSection },
+  components: {
+    RecommendationCards,
+    PricePlans,
+    MyServices,
+    ExperienceCards,
+    FirstSection,
+  },
   methods: {
-    scrollPage() {
-      console.log("selam");
-    },
+    scrollPage() {},
   },
 };
 </script>
@@ -38,6 +44,7 @@ export default {
 }
 .rows {
   height: calc(100vh - 70px);
+  margin-top: 15px;
 }
 .scroll-rows {
   height: 100%;

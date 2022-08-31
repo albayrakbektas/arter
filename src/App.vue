@@ -20,9 +20,10 @@ body {
   width: 100vw;
   line-height: 1.5;
   letter-spacing: 0.5px;
+  font-family: "Poppins", sans-serif;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Poppins, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
@@ -44,7 +45,6 @@ h6 {
   margin-bottom: 0;
   line-height: 1.2;
   letter-spacing: 0.5px;
-  font-family: "Poppins", sans-serif;
 }
 h6 {
   margin: 0;
@@ -106,7 +106,6 @@ a {
   position: absolute;
   top: 0;
   background-position: center;
-  height: 400px;
   background-size: cover;
 }
 .bg-img-overlay {

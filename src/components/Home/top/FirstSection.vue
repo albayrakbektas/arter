@@ -59,6 +59,6 @@ h1 {
   margin: 0 auto;
 }
 .row {
-  height: 400px;
+  height: 420px;
 }
 </style>
