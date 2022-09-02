@@ -52,7 +52,7 @@ export default {
   background-image: url("../assets/img/home/bg.jpeg");
 }
 .rows {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 15px);
   margin-top: 15px;
 }
 .scroll-rows {

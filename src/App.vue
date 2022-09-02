@@ -154,7 +154,6 @@ li {
     padding: 15px;
     overflow: hidden;
     position: relative;
-    width: 100vw;
     background: #191923;
     margin: 0 auto;
   }

@@ -38,10 +38,12 @@ h1 {
   background-image: url("../../../assets/img/home/bg.jpeg");
   left: 15px;
   right: 15px;
+  height: 420px;
 }
 .row-container {
   display: grid;
   grid-template-rows: repeat(3, auto);
+  height: calc(100% - 120px);
   padding: 60px 30px;
   text-align: center;
   background-image: -webkit-gradient(
@@ -67,6 +69,14 @@ h1 {
   height: 420px;
 }
 @media (min-width: 900px) {
+  .row {
+    position: relative;
+    margin: 60px 0 0;
+  }
+  .bg-img {
+    bottom: 0;
+    height: unset;
+  }
   .row-container {
     justify-content: start;
     text-align: left;

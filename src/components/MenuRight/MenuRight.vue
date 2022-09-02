@@ -32,6 +32,7 @@
       ></div>
       <div class="menu-right-container-header menu-container-content">
         <div
+          v-if="$store.state.isDesktopView"
           class="current-page-text"
           :class="{ 'opacity-zero': $store.state.isRightMenuActive }"
         >

@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     loadingPage: true,
-    isDesktopView: true,
+    isDesktopView: window.innerWidth > 900,
     isLeftMenuActive: false,
     isRightMenuActive: false,
     isSubItems: false,

@@ -39,6 +39,7 @@ export default {
   font-weight: 600;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
+  cursor: pointer;
 }
 .lang-avatar-active {
   background-color: #ffc107;

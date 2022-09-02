@@ -113,4 +113,9 @@ export default {
   color: #8c8c8e;
   line-height: 1.5;
 }
+@media (min-width: 900px) {
+  .menu-left-main-content {
+    height: calc(100vh - 30px);
+  }
+}
 </style>

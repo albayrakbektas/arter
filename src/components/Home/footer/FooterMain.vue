@@ -18,11 +18,15 @@ export default {
 
 <style lang="scss" scoped>
 .row {
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
   align-items: center;
+  justify-content: unset;
+  margin-bottom: 50px;
 }
 .footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  width: auto;
   padding: 20px 30px 10px;
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
   div {
@@ -32,6 +36,16 @@ export default {
     &:last-child {
       margin-bottom: 20px;
     }
+  }
+}
+@media (min-width: 900px) {
+  .row {
+    margin-bottom: 0;
+  }
+  .footer-container {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 1fr;
+    justify-content: space-between;
   }
 }
 </style>
