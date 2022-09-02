@@ -2,7 +2,7 @@
   <div class="row">
     <h4>Recommendations</h4>
     <div class="recommendations-scroll-x">
-      <div class="scroll-hidden">
+      <div @mousedown="touchEnd" @mouseup="touchStart" class="scroll-hidden">
         <RecommendationCard
           v-for="(item, index) of cardList"
           :card="item"
@@ -25,7 +25,14 @@ import SwiperNav from "@/components/Home/recommendation/SwiperNav";
 export default {
   name: "RecommendationCards",
   components: { SwiperNav, SwiperBullet, RecommendationCard },
-  methods: {},
+  methods: {
+    touchStart(e) {
+      console.log(e.target.deltaX, e.deltaX);
+    },
+    touchEnd(e) {
+      console.log(e.target.deltaX, e.deltaX);
+    },
+  },
   data() {
     return {
       cardList: [
@@ -111,5 +118,29 @@ h4 {
   pointer-events: none;
   opacity: 0;
   z-index: -1000;
+}
+@media (min-width: 900px) {
+  .row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: unset;
+    width: unset;
+    position: relative;
+    z-index: 99999;
+  }
+  .recommendations-scroll-x,
+  .navigation-container,
+  h4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  h4 {
+    text-align: left;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 </style>

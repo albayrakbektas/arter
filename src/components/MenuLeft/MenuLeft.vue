@@ -5,6 +5,7 @@
   >
     <div>
       <div
+        v-if="!$store.state.isDesktopView"
         @click="changeMenu"
         class="menu-container-icon-header"
         :class="[
@@ -117,5 +118,15 @@ export default {
 }
 .material-symbols-outlined {
   padding: 30px;
+}
+@media (min-width: 900px) {
+  .menu-left-container {
+    position: relative;
+    height: 100vh;
+    width: 290px;
+    min-width: 290px;
+    left: 0;
+    background: #20202a;
+  }
 }
 </style>

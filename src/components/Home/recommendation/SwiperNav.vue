@@ -12,40 +12,49 @@
 <script>
 export default {
   name: "SwiperNav",
-  // mounted() {
-  //   this.translate();
-  // },
-  // beforeDestroy() {
-  //   this.translate();
-  // },
+  data() {
+    return {};
+  },
+  mounted() {
+    this.$refs.prev.classList.add("disabled-nav");
+  },
   methods: {
     translate(nav) {
-      const activeBullet = document.querySelector(".active-swiper-bullet");
-      const bulletIndex = activeBullet.getAttribute("bullet-index");
-      console.log(bulletIndex);
-      if (bulletIndex === "3") {
-        this.$refs.next.classList.add("disabled-nav");
-      } else {
-        this.$refs.prev.classList.remove("disabled-nav");
-      }
-      if (bulletIndex === "0") {
-        this.$refs.prev.classList.add("disabled-nav");
-      } else {
-        this.$refs.prev.classList.remove("disabled-nav");
-      }
       if (nav === 1) {
-        document.querySelector(
-          ".scroll-hidden"
-        ).style.transform = `translate3d(-${
-          bulletIndex * 375 + 375
-        }px, 0px, 0px)`;
-      } else {
-        document.querySelector(
-          ".scroll-hidden"
-        ).style.transform = `translate3d(-${
-          bulletIndex * 375 - 375
-        }px, 0px, 0px)`;
+        this.$refs.prev.classList.remove("disabled-nav");
+        if (this.$store.state.xSlideIndex < 3) {
+          this.$store.state.xSlideIndex++;
+          this.$store.state.xPosition += 375;
+          document.querySelector(
+            ".scroll-hidden"
+          ).style.transform = `translate3d(-${this.$store.state.xPosition}px, 0px, 0px)`;
+        }
+        if (this.$store.state.xSlideIndex === 3) {
+          this.$refs.next.classList.add("disabled-nav");
+        } else {
+          this.$refs.next.classList.remove("disabled-nav");
+        }
+      } else if (nav === -1) {
+        this.$refs.next.classList.remove("disabled-nav");
+        if (this.$store.state.xSlideIndex > 0) {
+          this.$store.state.xSlideIndex--;
+          this.$store.state.xPosition -= 375;
+          document.querySelector(
+            ".scroll-hidden"
+          ).style.transform = `translate3d(-${this.$store.state.xPosition}px, 0px, 0px)`;
+        }
+        if (this.$store.state.xSlideIndex === 0) {
+          this.$refs.prev.classList.add("disabled-nav");
+        } else {
+          this.$refs.prev.classList.remove("disabled-nav");
+        }
       }
+      document
+        .querySelector(".active-swiper-bullet")
+        .classList.remove("active-swiper-bullet");
+      document
+        .querySelector(`[bullet-index='${this.$store.state.xSlideIndex}']`)
+        .classList.add("active-swiper-bullet");
     },
   },
 };

@@ -1,5 +1,8 @@
 <template>
-  <div class="home">
+  <div
+    class="home"
+    :class="{ 'active-menu-right': $store.state.isRightMenuActive }"
+  >
     <div class="bg-img">
       <div class="bg-img-overlay" />
     </div>
@@ -10,6 +13,8 @@
         <MyServices />
         <PricePlans />
         <RecommendationCards />
+        <BrandCards />
+        <FooterMain />
       </div>
     </div>
   </div>
@@ -21,9 +26,13 @@ import ExperienceCards from "@/components/Home/experience/ExperienceCards";
 import MyServices from "@/components/Home/services/MyServices";
 import PricePlans from "@/components/Home/prices/PricePlans";
 import RecommendationCards from "@/components/Home/recommendation/RecommendationCards";
+import BrandCards from "@/components/Home/brand/BrandCards";
+import FooterMain from "@/components/Home/footer/FooterMain";
 export default {
   name: "HomeView",
   components: {
+    FooterMain,
+    BrandCards,
     RecommendationCards,
     PricePlans,
     MyServices,
@@ -56,5 +65,12 @@ export default {
 }
 ::-webkit-scrollbar {
   display: none;
+}
+.home {
+  transform: translateX(0px);
+  transition: 600ms ease-in-out;
+}
+.active-menu-right {
+  transform: translateX(-150px);
 }
 </style>

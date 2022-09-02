@@ -36,7 +36,12 @@ export default {
   position: relative;
   width: 100vw;
   height: 100vh;
-  padding-right: 0;
   padding-top: 70px;
+  padding-right: 80px;
+}
+@media (min-width: 900px) {
+  .main-content {
+    padding-top: 0;
+  }
 }
 </style>

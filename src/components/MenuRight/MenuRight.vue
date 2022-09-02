@@ -25,13 +25,19 @@
         >
           close
         </span>
-        <span v-else class="material-symbols-outlined"> menu </span>
+        <span v-else class="material-symbols-outlined menu-icon"> menu </span>
       </div>
       <div
         class="menu-right-container-header menu-container-header bg-linear"
       ></div>
       <div class="menu-right-container-header menu-container-content">
-        <MenuRightNav />
+        <div
+          class="current-page-text"
+          :class="{ 'opacity-zero': $store.state.isRightMenuActive }"
+        >
+          home
+        </div>
+        <MenuRightNav v-if="$store.state.isRightMenuActive" />
       </div>
       <div class="menu-right-container-footer menu-container-footer bg-linear">
         <div class="language-container">
@@ -158,5 +164,39 @@ export default {
 }
 .material-symbols-outlined {
   padding: 30px;
+  cursor: pointer;
+}
+.menu-icon {
+  opacity: 0.5;
+  transition: opacity 1s;
+  &:hover {
+    opacity: 1;
+  }
+}
+.current-page-text {
+  transform: rotate(90deg);
+  text-align: center;
+  color: #fafafc;
+  font-size: 11px;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 1s;
+}
+@media (min-width: 920px) {
+  .menu-right-container {
+    right: -150px;
+    width: 230px;
+    top: 0;
+    bottom: 0;
+  }
+  .active-menu-right {
+    transform: translateX(-150px);
+  }
+  .menu-container-icon-header {
+    transform: translateX(0px);
+  }
 }
 </style>

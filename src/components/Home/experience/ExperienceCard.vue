@@ -24,8 +24,10 @@ export default {
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  //max-width: 50%;
-  //flex: 0 0 50%;
+}
+.experience-card-counter {
+  display: flex;
+  align-items: center;
 }
 span {
   color: #ffc107;
@@ -35,5 +37,11 @@ span {
 h6 {
   text-transform: unset;
   padding-left: 5px;
+}
+@media (min-width: 900px) {
+  .experience-card-container {
+    grid-template-columns: auto 2fr;
+    column-gap: 5px;
+  }
 }
 </style>

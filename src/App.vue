@@ -2,7 +2,6 @@
   <div id="app">
     <LandingPage v-if="$store.state.loadingPage" />
     <div class="app-content" v-else>
-      <MainHeader />
       <MainView />
     </div>
   </div>
@@ -10,7 +9,7 @@
 
 <style lang="scss">
 .app-content {
-  width: 100vw;
+  //width: 100vw;
   position: relative;
 }
 body {
@@ -137,16 +136,36 @@ li {
 }
 .disabled-nav {
   opacity: 0.2;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
+}
+@media (min-width: 900px) {
+  body {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+  #app {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    background: #191923;
+    margin: 0 auto;
+  }
+  .app-content {
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    background: #191923;
+    margin: 0 auto;
+  }
 }
 </style>
 
 <script>
 import LandingPage from "@/views/LandingPage";
 import MainView from "@/views/MainView";
-import MainHeader from "@/components/Header/MainHeader";
 export default {
-  components: { MainHeader, MainView, LandingPage },
+  components: { MainView, LandingPage },
   methods: {
     changeMenuVisiblity(direction) {
       if (direction === "left") {

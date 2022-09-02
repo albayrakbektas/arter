@@ -59,4 +59,10 @@ export default {
 .\33 {
   float: right;
 }
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+}
 </style>

@@ -105,4 +105,10 @@ i {
 .empty-star {
   color: rgba(43, 43, 53, 0.98);
 }
+@media (min-width: 900px) {
+  .recommendation-card-container-parent {
+    width: 475px;
+    padding-right: 30px;
+  }
+}
 </style>

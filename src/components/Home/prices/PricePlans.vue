@@ -46,4 +46,15 @@ h4 {
   margin: 0 0 30px 0;
   text-align: center;
 }
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+  h4 {
+    grid-area: 1 / span 3;
+    text-align: left;
+  }
+}
 </style>

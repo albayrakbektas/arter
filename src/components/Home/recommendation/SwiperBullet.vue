@@ -24,12 +24,14 @@ export default {
   },
   methods: {
     translate(e) {
+      this.$store.state.xSlideIndex = e;
       document
         .querySelector(".active-swiper-bullet")
         .classList.remove("active-swiper-bullet");
       document
         .querySelector(`[bullet-index='${e.toString()}']`)
         .classList.add("active-swiper-bullet");
+      this.$store.state.xPosition = e * 373;
       document.querySelector(
         ".scroll-hidden"
       ).style.transform = `translate3d(-${e * 373}px, 0px, 0px)`;

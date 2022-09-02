@@ -12,6 +12,11 @@
           <span>EXPLORE NOW</span>
         </router-link>
       </div>
+      <img
+        class="profile-photo"
+        src="../../../assets/img/face-2.png"
+        alt="profile photo"
+      />
     </div>
   </div>
 </template>
@@ -60,5 +65,25 @@ h1 {
 }
 .row {
   height: 420px;
+}
+@media (min-width: 900px) {
+  .row-container {
+    justify-content: start;
+    text-align: left;
+    padding: 60px;
+  }
+  .router-button {
+    justify-content: start;
+    margin: unset;
+    width: fit-content;
+  }
+  img {
+    position: absolute;
+    height: 100%;
+    width: 360px;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+  }
 }
 </style>
