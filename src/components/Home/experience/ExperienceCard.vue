@@ -1,7 +1,7 @@
 <template>
   <div class="experience-card-container">
     <div class="experience-card-counter">
-      <span>{{ experienceCard.count }}</span>
+      <span ref="count">{{ experienceCard.count }}</span>
       <span>{{ experienceCard.plus }}</span>
     </div>
     <h6>{{ experienceCard.title }}</h6>
@@ -13,6 +13,42 @@ export default {
   name: "ExperienceCard",
   props: {
     experienceCard: Object,
+  },
+  mounted() {
+    this.percentAnimate(
+      0,
+      Number(this.experienceCard.count),
+      2000,
+      "count",
+      false
+    );
+    // this.percentAnimate(0, Number(this.skill.percent), 2000, "percent", false);
+    // this.percentAnimate(0, Number(this.skill.percent), 2000, "percent", false);
+    // this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
+    // this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
+    // this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
+  },
+  methods: {
+    percentAnimate(start, end, duration, element, value) {
+      if (start >= end) {
+        return;
+      }
+      let range = end - start;
+      let current = start;
+      let increment = end > start ? 1 : -1;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let timer = setInterval(() => {
+        current += increment;
+        if (value) {
+          this.$refs[element].value = current;
+        } else {
+          this.$refs[element].textContent = current;
+        }
+        if (current === end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    },
   },
 };
 </script>
