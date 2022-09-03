@@ -5,17 +5,11 @@
     :class="{ 'menu-item-dropdown': item.subItems }"
   >
     <router-link :to="item.href">
-      <span>
+      <span ref="route-name">
         {{ item.textContent }}
       </span>
-      <span
-        v-if="item.subItems && !isSubItem"
-        class="material-symbols-outlined"
-      >
+      <span v-if="item.subItems" class="material-symbols-outlined">
         keyboard_arrow_right
-      </span>
-      <span v-if="item.subItems && isSubItem" class="material-symbols-outlined">
-        keyboard_arrow_down
       </span>
     </router-link>
     <ul
@@ -61,7 +55,23 @@ export default {
   props: {
     item: Object,
   },
+  mounted() {
+    this.activeRoute();
+  },
+  watch: {
+    $route: function () {
+      this.activeRoute();
+    },
+  },
   methods: {
+    activeRoute() {
+      const route = this.$route.name;
+      const item = this.$refs["route-name"];
+      item.classList.remove("active-route");
+      if (route === item.innerHTML.trim()) {
+        item.classList.add("active-route");
+      }
+    },
     showSubItems() {
       this.isSubItem = !this.isSubItem;
     },
@@ -72,6 +82,7 @@ export default {
 <style lang="scss" scoped>
 .material-symbols-outlined {
   font-size: 1.2rem;
+  transition: all 600ms ease-in-out;
 }
 li {
   display: block;
@@ -79,11 +90,24 @@ li {
   justify-content: space-between;
   list-style: none;
   background-color: transparent;
+  &:hover {
+    span {
+      color: #fafafc;
+    }
+    .material-symbols-outlined {
+      transform: rotate(90deg);
+    }
+  }
   span {
     text-transform: uppercase;
     display: inline-flex;
     vertical-align: middle;
+    color: #8c8c8e;
+    transition: color 600ms ease-in-out;
   }
+}
+.active-route {
+  color: #fafafc;
 }
 .menu-right-subNav-container {
   display: block;
