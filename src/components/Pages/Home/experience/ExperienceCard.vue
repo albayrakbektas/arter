@@ -22,11 +22,6 @@ export default {
       "count",
       false
     );
-    // this.percentAnimate(0, Number(this.skill.percent), 2000, "percent", false);
-    // this.percentAnimate(0, Number(this.skill.percent), 2000, "percent", false);
-    // this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
-    // this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
-    // this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
   },
   methods: {
     percentAnimate(start, end, duration, element, value) {
