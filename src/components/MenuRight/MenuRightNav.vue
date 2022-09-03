@@ -19,7 +19,7 @@ export default {
       routerList: [
         {
           textContent: "home",
-          href: "#.",
+          href: "/",
         },
         {
           textContent: "portfolio",
@@ -27,29 +27,29 @@ export default {
           subItems: [
             {
               textContent: "portfolio-1",
-              href: "#.",
+              href: "portfolio",
             },
             {
               textContent: "portfolio-2",
-              href: "#.",
+              href: "portfolio",
             },
             {
               textContent: "portfolio-3",
-              href: "#.",
+              href: "portfolio",
             },
             {
               textContent: "portfolio-4",
-              href: "#.",
+              href: "portfolio",
             },
           ],
         },
         {
           textContent: "history",
-          href: "#.",
+          href: "history",
         },
         {
           textContent: "contact",
-          href: "#.",
+          href: "contact",
         },
         {
           textContent: "blog",
@@ -57,21 +57,21 @@ export default {
           subItems: [
             {
               textContent: "blog-1",
-              href: "#.",
+              href: "blog",
             },
             {
               textContent: "blog-2",
-              href: "#.",
+              href: "blog",
             },
             {
               textContent: "blog-3",
-              href: "#.",
+              href: "blog",
             },
           ],
         },
         {
           textContent: "onepage",
-          href: "#.",
+          href: "onepage",
         },
       ],
     };
