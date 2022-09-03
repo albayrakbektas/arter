@@ -65,6 +65,7 @@ export default {
   left: -80vw;
   width: 80vw;
   transition: 600ms ease-in-out;
+  height: 100vh;
 }
 .active-menu-left {
   transform: translateX(80vw);
@@ -77,7 +78,7 @@ export default {
   transform: translateX(0);
 }
 .menu-left-container-header {
-  height: fit-content;
+  height: auto;
   display: grid;
   justify-items: center;
   * {
@@ -105,6 +106,7 @@ export default {
   display: flex;
   height: 100vh;
   overflow-y: scroll;
+  //height: 100%;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -122,7 +124,7 @@ export default {
 @media (min-width: 900px) {
   .menu-left-container {
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 30px);
     width: 290px;
     min-width: 290px;
     left: 0;

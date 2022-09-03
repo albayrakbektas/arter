@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BrandCard from "@/components/Home/brand/BrandCard";
+import BrandCard from "@/components/Pages/Home/brand/BrandCard";
 export default {
   name: "BrandCards",
   components: { BrandCard },
@@ -13,19 +13,19 @@ export default {
     return {
       brandList: [
         {
-          src: require("../../../assets/img/home/brand/1.png"),
+          src: require("../../../../assets/img/home/brand/1.png"),
           alt: "brand logo",
         },
         {
-          src: require("../../../assets/img/home/brand/2.png"),
+          src: require("../../../../assets/img/home/brand/2.png"),
           alt: "brand logo",
         },
         {
-          src: require("../../../assets/img/home/brand/3.png"),
+          src: require("../../../../assets/img/home/brand/3.png"),
           alt: "brand logo",
         },
         {
-          src: require("../../../assets/img/home/brand/4.png"),
+          src: require("../../../../assets/img/home/brand/4.png"),
           alt: "brand logo",
         },
       ],

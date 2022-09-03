@@ -9,17 +9,17 @@
 
 <style lang="scss">
 .app-content {
-  //width: 100vw;
+  box-sizing: border-box;
   position: relative;
 }
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  width: 100vw;
   line-height: 1.5;
   letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
+  background-color: #191923;
 }
 #app {
   font-family: Poppins, sans-serif;
@@ -27,6 +27,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   position: relative;
+  box-sizing: border-box;
 }
 .row {
   margin-left: -15px;
@@ -62,7 +63,7 @@ a {
   position: absolute;
   z-index: 999;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 70vw;
   background-color: #20202a;
 }
@@ -140,8 +141,6 @@ li {
 }
 @media (min-width: 900px) {
   body {
-    max-width: 100vw;
-    overflow: hidden;
   }
   #app {
     overflow: hidden;
@@ -149,13 +148,15 @@ li {
     width: 100vw;
     background: #191923;
     margin: 0 auto;
+    height: 100%;
+    padding: 15px;
   }
   .app-content {
-    padding: 15px;
     overflow: hidden;
     position: relative;
     background: #191923;
     margin: 0 auto;
+    height: 100%;
   }
 }
 </style>

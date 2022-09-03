@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import RecommendationCard from "@/components/Home/recommendation/RecommendationCard";
-import SwiperBullet from "@/components/Home/recommendation/SwiperBullet";
-import SwiperNav from "@/components/Home/recommendation/SwiperNav";
+import RecommendationCard from "@/components/Pages/Home/recommendation/RecommendationCard";
+import SwiperBullet from "@/components/Pages/Home/recommendation/SwiperBullet";
+import SwiperNav from "@/components/Pages/Home/recommendation/SwiperNav";
 export default {
   name: "RecommendationCards",
   components: { SwiperNav, SwiperBullet, RecommendationCard },
@@ -37,7 +37,7 @@ export default {
     return {
       cardList: [
         {
-          imgSrc: require("../../../assets/img/home/recommendation/face-1.jpeg"),
+          imgSrc: require("../../../../assets/img/home/recommendation/face-1.jpeg"),
           title: "Paul Trueman",
           subTitle: "Template author",
           content:
@@ -46,7 +46,7 @@ export default {
           index: 0,
         },
         {
-          imgSrc: require("../../../assets/img/home/recommendation/face-2.jpeg"),
+          imgSrc: require("../../../../assets/img/home/recommendation/face-2.jpeg"),
           title: "Paul Trueman",
           subTitle: "Template author",
           content:
@@ -55,7 +55,7 @@ export default {
           index: 1,
         },
         {
-          imgSrc: require("../../../assets/img/home/recommendation/face-3.jpeg"),
+          imgSrc: require("../../../../assets/img/home/recommendation/face-3.jpeg"),
           title: "Paul Trueman",
           subTitle: "Template author",
           content:
@@ -64,7 +64,7 @@ export default {
           index: 2,
         },
         {
-          imgSrc: require("../../../assets/img/home/recommendation/face-4.jpeg"),
+          imgSrc: require("../../../../assets/img/home/recommendation/face-4.jpeg"),
           title: "Paul Trueman",
           subTitle: "Template author",
           content:

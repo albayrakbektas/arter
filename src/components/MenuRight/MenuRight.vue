@@ -133,6 +133,7 @@ export default {
   right: -70vw;
   width: 70vw;
   transition: 600ms ease-in-out;
+  height: 100vh;
 }
 .active-menu-right {
   transform: translateX(-70vw);
@@ -192,6 +193,7 @@ export default {
     width: 230px;
     top: 0;
     bottom: 0;
+    height: calc(100vh - 30px);
   }
   .active-menu-right {
     transform: translateX(-150px);

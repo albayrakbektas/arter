@@ -1,15 +1,15 @@
 <template>
   <div class="row">
     <h4>My Services</h4>
-    <ServiceCard v-for="(item, index) of cardList" :card="item" :key="index" />
+    <CardMain v-for="(item, index) of cardList" :card="item" :key="index" />
   </div>
 </template>
 
 <script>
-import ServiceCard from "@/components/Home/services/ServiceCard";
+import CardMain from "@/components/Cards/CardMain";
 export default {
   name: "MyServices",
-  components: { ServiceCard },
+  components: { CardMain },
   data() {
     return {
       cardList: [

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ExperienceCard from "@/components/Home/experience/ExperienceCard";
+import ExperienceCard from "@/components/Pages/Home/experience/ExperienceCard";
 export default {
   name: "ExperienceCards",
   components: { ExperienceCard },

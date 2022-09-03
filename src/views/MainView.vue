@@ -22,7 +22,7 @@ export default {
 <style lang="scss" scoped>
 .main-container {
   position: relative;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   background-color: #1e1e28;
 }
@@ -35,13 +35,13 @@ export default {
 .main-content {
   position: relative;
   width: 100vw;
-  height: 100vh;
   padding-top: 70px;
 }
 @media (min-width: 900px) {
   .main-content {
     padding-top: 0 !important;
     padding-right: 80px;
+    height: calc(100vh - 30px);
   }
 }
 </style>

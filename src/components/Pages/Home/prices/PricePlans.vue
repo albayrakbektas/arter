@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import PriceCard from "@/components/Home/prices/PriceCard";
+import PriceCard from "@/components/Pages/Home/prices/PriceCard";
 export default {
   name: "PricePlans",
   components: { PriceCard },

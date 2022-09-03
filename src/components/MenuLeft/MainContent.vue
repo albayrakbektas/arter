@@ -96,7 +96,7 @@ export default {
 <style lang="scss" scoped>
 .menu-left-main-content {
   padding-top: 230px;
-  height: 100vh;
+  height: calc(100vh + 50px);
   width: 75%;
   margin: 0 auto;
 }
@@ -128,7 +128,8 @@ export default {
 }
 @media (min-width: 900px) {
   .menu-left-main-content {
-    height: calc(100vh - 30px);
+    //height: calc(100vh - 30px);
+    height: 100%;
   }
 }
 </style>

@@ -1,46 +1,29 @@
 <template>
-  <div
-    class="home"
-    :class="{ 'active-menu-right': $store.state.isRightMenuActive }"
-  >
-    <div class="bg-img">
-      <div class="bg-img-overlay" />
-    </div>
-    <div class="rows">
-      <div @scroll="scrollPage" class="scroll-rows">
-        <FirstSection />
-        <ExperienceCards />
-        <MyServices />
-        <PricePlans />
-        <RecommendationCards />
-        <BrandCards />
-        <FooterMain />
-      </div>
-    </div>
-  </div>
+  <LayoutPage>
+    <FirstSection />
+    <ExperienceCards />
+    <MyServices />
+    <PricePlans />
+    <RecommendationCards />
+  </LayoutPage>
 </template>
 
 <script>
-import FirstSection from "@/components/Home/top/FirstSection";
-import ExperienceCards from "@/components/Home/experience/ExperienceCards";
-import MyServices from "@/components/Home/services/MyServices";
-import PricePlans from "@/components/Home/prices/PricePlans";
-import RecommendationCards from "@/components/Home/recommendation/RecommendationCards";
-import BrandCards from "@/components/Home/brand/BrandCards";
-import FooterMain from "@/components/Home/footer/FooterMain";
+import FirstSection from "@/components/Pages/Home/top/FirstSection";
+import ExperienceCards from "@/components/Pages/Home/experience/ExperienceCards";
+import MyServices from "@/components/Pages/Home/services/MyServices";
+import PricePlans from "@/components/Pages/Home/prices/PricePlans";
+import RecommendationCards from "@/components/Pages/Home/recommendation/RecommendationCards";
+import LayoutPage from "@/components/Layouts/LayoutPage";
 export default {
   name: "HomeView",
   components: {
-    FooterMain,
-    BrandCards,
+    LayoutPage,
     RecommendationCards,
     PricePlans,
     MyServices,
     ExperienceCards,
     FirstSection,
-  },
-  methods: {
-    scrollPage() {},
   },
 };
 </script>
@@ -52,8 +35,8 @@ export default {
   background-image: url("../assets/img/home/bg.jpeg");
 }
 .rows {
-  height: calc(100vh - 15px);
-  margin-top: 15px;
+  //height: calc(100vh - 15px);
+  //margin-top: 15px;
 }
 .scroll-rows {
   height: 100%;
@@ -61,7 +44,7 @@ export default {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0px, 0px, 0px);
-  //scroll-behavior: smooth;
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   scroll-snap-align: start;
 }

@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import CardContent from "@/components/Home/prices/CardContent";
+import CardContent from "@/components/Pages/Home/prices/CardContent";
 export default {
   name: "PriceCard",
   components: { CardContent },

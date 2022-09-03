@@ -20,7 +20,6 @@ export default {
 .row {
   align-items: center;
   justify-content: unset;
-  margin-bottom: 50px;
 }
 .footer-container {
   display: grid;

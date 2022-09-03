@@ -14,7 +14,7 @@
       </div>
       <img
         class="profile-photo"
-        src="../../../assets/img/face-2.png"
+        src="../../../../assets/img/face-2.png"
         alt="profile photo"
       />
     </div>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import SlideCode from "@/components/Home/top/SlideCode";
+import SlideCode from "@/components/Pages/Home/top/SlideCode";
 export default {
   name: "FirstSection",
   components: { SlideCode },
@@ -35,7 +35,7 @@ h1 {
   font-family: Poppins, sans-serif;
 }
 .bg-img {
-  background-image: url("../../../assets/img/home/bg.jpeg");
+  background-image: url("../../../../assets/img/home/bg.jpeg");
   left: 15px;
   right: 15px;
   height: 420px;
