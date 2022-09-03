@@ -2,9 +2,12 @@
   <div class="skill-progress-container">
     <div class="skill-top">
       <h6>{{ skill.name }}</h6>
-      <p>{{ skill.percent }}%</p>
+      <div class="p-container">
+        <p ref="percent">{{ skill.percent }}</p>
+        <p>%</p>
+      </div>
     </div>
-    <progress :value="Number(skill.percent)" max="100" />
+    <progress ref="progress" :value="0" max="100" />
   </div>
 </template>
 
@@ -13,6 +16,36 @@ export default {
   name: "SkillProgress",
   props: {
     skill: Object,
+  },
+  mounted() {
+    this.percentAnimate(0, Number(this.skill.percent), 2000, "percent", false);
+    this.percentAnimate(0, Number(this.skill.percent), 2000, "percent", false);
+    this.percentAnimate(0, Number(this.skill.percent), 2000, "percent", false);
+    this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
+    this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
+    this.percentAnimate(0, Number(this.skill.percent), 2000, "progress", true);
+  },
+  methods: {
+    percentAnimate(start, end, duration, element, value) {
+      if (start >= end) {
+        return;
+      }
+      let range = end - start;
+      let current = start;
+      let increment = end > start ? 1 : -1;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let timer = setInterval(() => {
+        current += increment;
+        if (value) {
+          this.$refs[element].value = current;
+        } else {
+          this.$refs[element].textContent = current;
+        }
+        if (current === end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    },
   },
 };
 </script>
@@ -29,6 +62,9 @@ export default {
   grid-template-columns: repeat(2, auto);
   justify-content: space-between;
   align-items: center;
+}
+.p-container {
+  display: flex;
 }
 p {
   margin: 0;

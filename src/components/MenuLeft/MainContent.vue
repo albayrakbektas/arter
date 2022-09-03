@@ -38,6 +38,7 @@ export default {
   },
   data() {
     return {
+      index: 0,
       languageCircleList: [
         {
           language: "french",
@@ -57,24 +58,36 @@ export default {
   mounted() {
     document.querySelector(".menu-left-main-content").style.transform =
       "translate3d(0px, 0px, 0px)";
-    this.setProgress();
-  },
-  beforeDestroy() {
-    this.setProgress();
+    this.percentAnimate(0, Number(this.languageCircleList[0].percent), 2000, 1);
+    this.percentAnimate(0, Number(this.languageCircleList[1].percent), 2000, 2);
+    this.percentAnimate(0, Number(this.languageCircleList[2].percent), 2000, 3);
   },
   methods: {
-    setProgress() {
-      const spinners = document.querySelectorAll(".progress-spinner");
-      for (let i = 0; i < spinners.length; i++) {
-        spinners[i].style.background =
+    percentAnimate(start, end, duration, n) {
+      if (start === end) {
+        return;
+      }
+      let range = end - start;
+      let current = start;
+      let increment = end > start ? 1 : -1;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let timer = setInterval(() => {
+        current += increment;
+        const spinner = document.querySelector(
+          `div.language-circle-container > div:nth-child(${n}) > div > div.progress-spinner`
+        );
+        spinner.style.background =
           "conic-gradient(rgb(255, 193, 7) " +
           0 +
           "deg,rgb(255, 193, 7)" +
-          Number(this.languageCircleList[i].percent) * 3.6 +
+          current * 3.6 +
           "deg,rgb(0, 0, 0) " +
-          Number(this.languageCircleList[i].percent) * 3.6 +
+          current * 3.6 +
           "deg,rgb(0, 0, 0) 360deg)";
-      }
+        if (current === end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
     },
   },
 };

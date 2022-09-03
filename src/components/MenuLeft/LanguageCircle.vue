@@ -1,7 +1,10 @@
 <template>
   <div class="circle-container">
     <div class="language-circle">
-      <div class="middle-circle">{{ circle.percent }}%</div>
+      <div class="middle-circle">
+        <p ref="percent">{{ circle.percent }}</p>
+        %
+      </div>
       <div class="progress-spinner"></div>
     </div>
     <h6>{{ circle.language }}</h6>
@@ -13,6 +16,27 @@ export default {
   name: "LanguageCircle",
   props: {
     circle: Object,
+  },
+  mounted() {
+    this.percentAnimate(0, Number(this.circle.percent), 2000, "percent");
+  },
+  methods: {
+    percentAnimate(start, end, duration, element) {
+      if (start >= end) {
+        return;
+      }
+      let range = end - start;
+      let current = start;
+      let increment = end > start ? 1 : -1;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let timer = setInterval(() => {
+        current += increment;
+        this.$refs[element].textContent = current;
+        if (current === end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    },
   },
 };
 </script>

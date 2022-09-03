@@ -61,7 +61,9 @@ export default {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0px, 0px, 0px);
-  scroll-behavior: smooth;
+  //scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
 }
 ::-webkit-scrollbar {
   display: none;
