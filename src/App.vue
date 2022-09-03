@@ -8,6 +8,9 @@
 </template>
 
 <style lang="scss">
+html {
+  -webkit-tap-highlight-color: transparent;
+}
 .app-content {
   box-sizing: border-box;
   position: relative;
@@ -141,6 +144,7 @@ li {
 }
 @media (min-width: 900px) {
   body {
+    outline: none;
   }
   #app {
     overflow: hidden;

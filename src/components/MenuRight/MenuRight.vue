@@ -18,14 +18,13 @@
       >
         <span
           v-if="$store.state.isRightMenuActive"
-          class="material-symbols-outlined"
+          class="menu-icon menu-close"
           :class="{
             'opacity-zero': $store.state.isLeftMenuActive,
           }"
         >
-          close
         </span>
-        <span v-else class="material-symbols-outlined menu-icon"> menu </span>
+        <span v-else class="menu-icon"></span>
       </div>
       <div
         class="menu-right-container-header menu-container-header bg-linear"
@@ -171,9 +170,46 @@ export default {
 .menu-icon {
   opacity: 0.5;
   transition: opacity 1s;
+  position: relative;
+  margin: 5px 30px 0;
+  cursor: pointer;
   &:hover {
     opacity: 1;
   }
+}
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  background-color: #8c8c8e;
+  content: "";
+  width: 15px;
+  height: 3px;
+  display: block;
+  border-radius: 1px;
+  backface-visibility: hidden;
+}
+.menu-icon::before,
+.menu-icon::after {
+  position: absolute;
+}
+.menu-icon::before {
+  top: -5px;
+}
+.menu-icon::after {
+  top: 5px;
+}
+.menu-close {
+  transform: rotate(45deg);
+}
+.menu-close::before {
+  -webkit-transform: translate(0px, 5px) rotate(-90deg);
+  transform: translate(0px, 5px) rotate(-90deg);
+}
+.menu-close::after {
+  -webkit-transform: translate(0px, -5px) rotate(-90deg);
+  transform: translate(0px, -5px) rotate(-90deg);
 }
 .current-page-text {
   transform: rotate(90deg);
