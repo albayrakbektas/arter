@@ -1,10 +1,10 @@
 <template>
-  <div class="about"></div>
+  <div class="history"></div>
 </template>
 
 <script>
 export default {
-  name: "HomeView",
+  name: "HistoryView",
   components: {},
 };
 </script>
