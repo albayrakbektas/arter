@@ -36,7 +36,7 @@
           class="current-page-text"
           :class="{ 'opacity-zero': $store.state.isRightMenuActive }"
         >
-          home
+          {{ this.$route.name }}
         </div>
         <MenuRightNav v-if="$store.state.isRightMenuActive" />
       </div>
