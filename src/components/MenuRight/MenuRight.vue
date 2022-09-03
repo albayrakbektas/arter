@@ -181,8 +181,9 @@ export default {
   color: #fafafc;
   font-size: 11px;
   position: absolute;
-  top: 120px;
-  left: 20px;
+  top: 150px;
+  width: 200px;
+  left: -63px;
   text-transform: uppercase;
   opacity: 1;
   transition: opacity 1s;

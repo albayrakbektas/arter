@@ -24,5 +24,9 @@ img {
   width: 120px;
   margin-bottom: 30px;
   opacity: 0.5;
+  transition: opacity 0.6s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
 }
 </style>
