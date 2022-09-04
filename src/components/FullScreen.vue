@@ -1,5 +1,5 @@
 <template>
-  <div class="full-screen-image-container">
+  <div v-if="$store.state.isFullScreen" class="full-screen-image-container">
     <div class="full-screen-image">
       <div class="fsi-header-container bg-linear">
         <div class="fsih-icon-container">

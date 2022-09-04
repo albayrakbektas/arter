@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     loadingPage: true,
+    isFullScreen: false,
     isDesktopView: window.innerWidth > 900,
     isLeftMenuActive: false,
     isRightMenuActive: false,
