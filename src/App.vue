@@ -3,6 +3,7 @@
     <LandingPage v-if="$store.state.loadingPage" />
     <div class="app-content" v-else>
       <MainView />
+      <FullScreen />
     </div>
   </div>
 </template>
@@ -169,8 +170,9 @@ li {
 <script>
 import LandingPage from "@/views/LandingPage";
 import MainView from "@/views/MainView";
+import FullScreen from "@/components/FullScreen";
 export default {
-  components: { MainView, LandingPage },
+  components: { FullScreen, MainView, LandingPage },
   methods: {
     changeMenuVisiblity(direction) {
       if (direction === "left") {

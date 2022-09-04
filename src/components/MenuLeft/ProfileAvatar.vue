@@ -22,7 +22,6 @@ export default {
   width: 90px;
   position: relative;
   margin-bottom: 15px;
-
   * {
     height: 100%;
     width: 100%;
