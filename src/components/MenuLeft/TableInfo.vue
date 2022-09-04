@@ -12,23 +12,8 @@
 <script>
 export default {
   name: "TableInfo",
-  data() {
-    return {
-      tableList: [
-        {
-          key: "Residence:",
-          value: "Turkey",
-        },
-        {
-          key: "City:",
-          value: "Izmir",
-        },
-        {
-          key: "Age:",
-          value: "26",
-        },
-      ],
-    };
+  props: {
+    tableList: Array,
   },
 };
 </script>
