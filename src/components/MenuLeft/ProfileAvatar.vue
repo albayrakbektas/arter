@@ -3,8 +3,8 @@
     <router-link to="#.">
       <img src="../../assets/img/face-1.jpeg" alt="profile picture" />
     </router-link>
-    <div class="status-dot"></div>
-    <div class="status-dot-border"></div>
+    <div class="white-light"></div>
+    <div class="yellow-light"></div>
   </div>
 </template>
 
@@ -27,8 +27,8 @@ export default {
     width: 100%;
   }
 }
-.status-dot,
-.status-dot-border {
+.white-light,
+.yellow-light {
   position: absolute;
   right: 3.5px;
   bottom: 3.5px;
@@ -37,39 +37,32 @@ export default {
   height: 15px;
   width: 15px;
   border-radius: 50%;
+  box-sizing: border-box;
 }
-.status-dot-border {
-  background-color: rgba(250, 250, 252, 1);
-  height: 0;
-  width: 0;
-  z-index: 99;
-  //animation: border 1s infinite;
+.white-light {
+  height: 20px;
+  width: 20px;
+  background-color: #fafafc;
+  right: 1px;
+  bottom: 1px;
+  opacity: 0;
+  animation: ani 1s ease-in-out infinite;
 }
-@keyframes border {
+@keyframes ani {
   0% {
-    height: 0;
-    width: 0;
-    border: 1px solid rgba(250, 250, 252, 0.5);
+    opacity: 0.2;
   }
   25% {
-    height: 15px;
-    width: 15px;
-    border: 1px solid rgba(250, 250, 252, 0.5);
+    opacity: 0.3;
   }
   50% {
-    height: 17px;
-    width: 17px;
-    border: 1px solid rgba(250, 250, 252, 0.5);
+    opacity: 0.4;
   }
   75% {
-    height: 19px;
-    width: 19px;
-    border: 1px solid rgba(250, 250, 252, 0.5);
+    opacity: 0.3;
   }
   100% {
-    height: 22px;
-    width: 22px;
-    border: 1px solid rgba(250, 250, 252, 0.5);
+    opacity: 0;
   }
 }
 img {

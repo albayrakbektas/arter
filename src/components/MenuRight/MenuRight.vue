@@ -237,6 +237,12 @@ export default {
   }
   .menu-container-icon-header {
     transform: translateX(0px);
+    cursor: pointer;
+    &:hover {
+      .menu-icon {
+        opacity: 1;
+      }
+    }
   }
 }
 </style>

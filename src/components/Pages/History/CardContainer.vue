@@ -48,6 +48,29 @@ h4 {
 }
 .card {
   position: relative;
+  &:hover {
+    .white-light {
+      opacity: 1;
+      animation: ani 1s ease-in-out infinite;
+    }
+  }
+}
+@keyframes ani {
+  0% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .yellow-light,
 .white-light {
@@ -63,10 +86,6 @@ h4 {
   right: -2px;
   top: 5.5px;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-  &:hover {
-    opacity: 1;
-  }
 }
 .yellow-light {
   cursor: pointer;
@@ -76,11 +95,6 @@ h4 {
   width: 15px;
   background-color: #1e1e28;
   border: solid 3px #ffc107;
-  &:hover {
-    .white-light {
-      opacity: 1;
-    }
-  }
 }
 .card-container {
   margin-right: 30px;

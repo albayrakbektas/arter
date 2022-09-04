@@ -75,7 +75,7 @@ export default {
   color: #fafafc;
   font-size: 16px;
   min-height: 70px;
-  text-align: center;
+  text-align: left;
 }
 i {
   color: #ffc107;
