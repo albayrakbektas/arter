@@ -35,8 +35,32 @@ export default {
   height: 400px;
   background-image: url("../../assets/img/bg.jpeg");
 }
-.rows {
-  //margin-top: 15px;
+@keyframes load {
+  0% {
+    opacity: 0;
+    scale: 0.96;
+    //transform: translate3d(-10px, -10px, 0);
+  }
+  25% {
+    opacity: 0.25;
+    scale: 0.97;
+    //transform: translate3d(-7.5px, -7.5px, 0);
+  }
+  50% {
+    opacity: 0.5;
+    scale: 0.98;
+    //transform: translate3d(-5px, -5px, 0);
+  }
+  75% {
+    opacity: 0.5;
+    scale: 0.999;
+    //transform: translate3d(-0.5px, -0.5px, 0);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    //transform: translate3d(0px, 0px, 0px);
+  }
 }
 .scroll-rows {
   height: calc(100vh - 70px);
@@ -47,6 +71,10 @@ export default {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   scroll-snap-align: start;
+  * {
+    animation-delay: 2s;
+    animation: 0.6s ease-in-out load;
+  }
 }
 ::-webkit-scrollbar {
   display: none;
@@ -55,12 +83,12 @@ export default {
   transform: translateX(0px);
   transition: 600ms ease-in-out;
 }
-.active-menu-right {
-  transform: translateX(-150px);
-}
 @media (min-width: 900px) {
   .scroll-rows {
     height: calc(100vh - 15px);
+  }
+  .active-menu-right {
+    transform: translateX(-150px);
   }
 }
 </style>

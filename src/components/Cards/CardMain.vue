@@ -73,9 +73,15 @@ a {
   letter-spacing: 1.5px;
   font-weight: 600;
   text-transform: uppercase;
+  &:hover {
+    i.fa-chevron-right {
+      transform: translateX(4px);
+    }
+  }
 }
 a,
 i {
   color: #ffc107;
+  transition: 400ms ease-in-out;
 }
 </style>

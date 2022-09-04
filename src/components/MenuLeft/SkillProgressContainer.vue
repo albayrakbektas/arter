@@ -33,7 +33,7 @@ export default {
           percent: "65",
         },
         {
-          name: "WordPress",
+          name: "Wordpress",
           percent: "85",
         },
       ],

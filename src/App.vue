@@ -23,6 +23,7 @@ body {
   letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
   background-color: #191923;
+  overflow: hidden;
 }
 #app {
   font-family: Poppins, sans-serif;

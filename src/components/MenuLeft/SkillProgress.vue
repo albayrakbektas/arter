@@ -83,4 +83,7 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
   background-color: #ffc107;
 }
+h6 {
+  text-transform: unset;
+}
 </style>

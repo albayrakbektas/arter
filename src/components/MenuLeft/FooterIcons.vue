@@ -54,4 +54,10 @@ export default {
     justify-content: center;
   }
 }
+i {
+  transition: 0.4s ease-in-out;
+  &:hover {
+    color: #fafafc;
+  }
+}
 </style>

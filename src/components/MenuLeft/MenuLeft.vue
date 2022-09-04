@@ -84,10 +84,16 @@ export default {
   * {
     text-align: center;
   }
+  a {
+    margin: 0 0 10px 0;
+  }
   h5 {
     font-size: 15px;
     color: #fafafc;
-    margin: 0 0 10px 0;
+    transition: 0.4s ease-in-out;
+    &:hover {
+      color: #ffc107;
+    }
   }
   p {
     font-size: 11px;

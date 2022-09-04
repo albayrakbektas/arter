@@ -34,10 +34,6 @@ export default {
   right: 0;
   background-image: url("../assets/img/home/bg.jpeg");
 }
-.rows {
-  //height: calc(100vh - 15px);
-  //margin-top: 15px;
-}
 .scroll-rows {
   height: 100%;
   overflow-y: scroll;
@@ -55,7 +51,9 @@ export default {
   transform: translateX(0px);
   transition: 600ms ease-in-out;
 }
-.active-menu-right {
-  transform: translateX(-150px);
+@media (min-width: 900px) {
+  .active-menu-right {
+    transform: translateX(-150px);
+  }
 }
 </style>

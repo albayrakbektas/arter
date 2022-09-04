@@ -33,6 +33,7 @@ i {
   margin-right: 5px;
   font-size: 9px;
   color: #ffc107;
+  font-weight: 900;
 }
 li {
   list-style: none;
@@ -42,7 +43,13 @@ li {
   text-align: start;
   align-items: center;
   font-size: 12px;
+  font-weight: 600;
   color: #8c8c8e;
   margin-bottom: 5px;
+}
+@media (min-width: 900px) {
+  i {
+    margin-right: 10px;
+  }
 }
 </style>

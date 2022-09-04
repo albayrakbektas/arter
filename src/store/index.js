@@ -9,6 +9,7 @@ export default new Vuex.Store({
     isDesktopView: window.innerWidth > 900,
     isLeftMenuActive: false,
     isRightMenuActive: false,
+    isRightMenuNotActive: true,
     isSubItems: false,
     isSubItem: false,
     xSlideIndex: 0,

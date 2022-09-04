@@ -95,7 +95,7 @@ export default {
 
 <style lang="scss" scoped>
 .menu-left-main-content {
-  padding-top: 230px;
+  padding-top: 260px;
   height: calc(100vh + 50px);
   width: 75%;
   margin: 0 auto;
@@ -125,6 +125,15 @@ export default {
   font-size: 10px;
   color: #8c8c8e;
   line-height: 1.5;
+  transition: 0.4s ease-in-out;
+  font-weight: 600;
+}
+.pdf-container {
+  &:hover {
+    .download-pdf {
+      color: #fafafc;
+    }
+  }
 }
 @media (min-width: 900px) {
   .menu-left-main-content {

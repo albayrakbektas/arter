@@ -40,10 +40,16 @@ export default {
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
   cursor: pointer;
+  &:hover {
+    color: #fafafc;
+  }
 }
 .lang-avatar-active {
   background-color: #ffc107;
   box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
   color: #1e1e28;
+  &:hover {
+    color: unset;
+  }
 }
 </style>

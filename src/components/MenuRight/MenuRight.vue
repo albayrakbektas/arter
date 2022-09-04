@@ -1,7 +1,10 @@
 <template>
   <div
     class="menu-right-container menu-container"
-    :class="{ 'active-menu-right': $store.state.isRightMenuActive }"
+    :class="[
+      { 'active-menu-right': $store.state.isRightMenuActive },
+      { 'deactive-menu-right': $store.state.isRightMenuNotActive },
+    ]"
   >
     <div>
       <div
@@ -59,6 +62,8 @@ export default {
     changeMenu() {
       this.$store.state.isRightMenuActive =
         !this.$store.state.isRightMenuActive;
+      this.$store.state.isRightMenuNotActive =
+        !this.$store.state.isRightMenuNotActive;
     },
   },
   data() {
@@ -136,6 +141,9 @@ export default {
 }
 .active-menu-right {
   transform: translateX(-70vw);
+}
+.deactive-menu-right {
+  transform: translateX(0);
 }
 .menu-container-icon-header {
   justify-content: flex-start;

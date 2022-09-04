@@ -1,6 +1,6 @@
 <template>
   <li
-    @click="showSubItems"
+    @click="showSubItems(item)"
     class="menu-item"
     :class="{ 'menu-item-dropdown': item.subItems }"
   >
@@ -72,8 +72,13 @@ export default {
         item.classList.add("active-route");
       }
     },
-    showSubItems() {
-      this.isSubItem = !this.isSubItem;
+    showSubItems(item) {
+      if (item.subItems) {
+        this.isSubItem = !this.isSubItem;
+      } else {
+        this.$store.state.isRightMenuActive = false;
+        this.$store.state.isRightMenuNotActive = true;
+      }
     },
   },
 };
