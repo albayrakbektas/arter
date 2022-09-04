@@ -1,6 +1,6 @@
 <template>
   <div class="menu-left-main-content">
-    <TableInfo />
+    <TableInfo :table-list="tableList" />
     <div class="divider" />
     <div class="language-circle-container">
       <LanguageCircle
@@ -39,6 +39,20 @@ export default {
   data() {
     return {
       index: 0,
+      tableList: [
+        {
+          key: "Residence:",
+          value: "Turkey",
+        },
+        {
+          key: "City:",
+          value: "Izmir",
+        },
+        {
+          key: "Age:",
+          value: "26",
+        },
+      ],
       languageCircleList: [
         {
           language: "french",
