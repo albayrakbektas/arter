@@ -40,14 +40,22 @@ export default {
 <style scoped>
 .row {
   grid-auto-rows: auto;
+  display: block;
 }
 h4 {
   font-size: 17px;
   margin: 0 0 30px 0;
   text-align: center;
 }
+.card-image-href {
+  height: 150px;
+}
+.gs {
+  height: 350px;
+}
 @media (min-width: 900px) {
   .row {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 1fr 1fr;
     justify-content: space-between;
@@ -59,8 +67,10 @@ h4 {
   }
   .card-image-href {
     width: 100%;
+    height: unset;
   }
   .gs {
+    height: unset;
     grid-row: 2 / span 3;
     grid-column: 2;
     height: -webkit-fill-available;
