@@ -35,6 +35,12 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/BlogView.vue"),
   },
   {
+    path: "/publication",
+    name: "publication",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/PublicationView.vue"),
+  },
+  {
     path: "/onepage",
     name: "onepage",
     component: () =>
