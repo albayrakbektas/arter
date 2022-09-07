@@ -26,20 +26,34 @@ export default {
           href: "#.",
           subItems: [
             {
-              textContent: "portfolio-1",
+              textContent: "2 Column",
               href: "portfolio",
+              layoutGrid: "two-column-grid",
             },
             {
-              textContent: "portfolio-2",
+              textContent: "3 Column",
               href: "portfolio",
+              layoutGrid: "three-column-grid",
             },
             {
-              textContent: "portfolio-3",
+              textContent: "2 Column Masonry",
               href: "portfolio",
+              layoutGrid: "two-column-masonry",
             },
             {
-              textContent: "portfolio-4",
+              textContent: "3 Column masonry",
               href: "portfolio",
+              layoutGrid: "three-column-masonry",
+            },
+            {
+              textContent: "single project",
+              href: "portfolio",
+              layoutGrid: "single-project",
+            },
+            {
+              textContent: "single project 2",
+              href: "portfolio",
+              layoutGrid: "single-project-two",
             },
           ],
         },
@@ -53,25 +67,27 @@ export default {
         },
         {
           textContent: "blog",
-          href: "#.",
+          href: "blog",
           subItems: [
             {
-              textContent: "blog-1",
-              href: "blog",
+              textContent: "2 column",
+              href: "#.",
+              layoutGrid: "two-column-grid",
             },
             {
-              textContent: "blog-2",
-              href: "blog",
+              textContent: "3 Column",
+              href: "#.",
+              layoutGrid: "three-column-grid",
             },
             {
-              textContent: "blog-3",
-              href: "blog",
+              textContent: "publication",
+              href: "publication",
             },
           ],
         },
         {
           textContent: "onepage",
-          href: "onepage",
+          href: "#.",
         },
       ],
     };

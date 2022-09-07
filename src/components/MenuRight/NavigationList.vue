@@ -21,9 +21,10 @@
         class="menu-item menu-sub-item"
         :class="{ 'menu-sub-item-visible': isSubItem }"
         :key="subIndex"
+        @click="changeGridLayout(subItem)"
       >
         <router-link :to="subItem.href">
-          <span>
+          <span class="sub-content">
             {{ subItem.textContent }}
           </span>
           <span
@@ -80,6 +81,11 @@ export default {
         this.$store.state.isRightMenuNotActive = true;
       }
     },
+    changeGridLayout(item) {
+      this.$store.state.layoutGrid = item.layoutGrid;
+      this.$store.state.isRightMenuActive = false;
+      this.$store.state.isRightMenuNotActive = true;
+    },
   },
 };
 </script>
@@ -110,9 +116,6 @@ li {
     color: #8c8c8e;
     transition: color 600ms ease-in-out;
   }
-}
-.active-route {
-  color: #fafafc;
 }
 .menu-right-subNav-container {
   display: block;
@@ -153,5 +156,8 @@ a {
 .menu-sub-item-visible {
   opacity: 1;
   pointer-events: all;
+}
+.sub-content {
+  text-transform: uppercase;
 }
 </style>

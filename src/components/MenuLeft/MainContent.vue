@@ -12,7 +12,7 @@
     <div class="divider" />
     <SkillProgressContainer />
     <div class="divider" />
-    <KnowledgeList />
+    <KnowledgeList :knowledge-list="knowledgeList" />
     <div class="divider" />
     <div class="pdf-container">
       <router-link class="download-pdf" to="#.">
@@ -66,6 +66,12 @@ export default {
           language: "spanish",
           percent: "70",
         },
+      ],
+      knowledgeList: [
+        { icon: "fa-solid fa-check", content: "Bootstrap, Materialize" },
+        { icon: "fa-solid fa-check", content: "Stylus, Sass, Less" },
+        { icon: "fa-solid fa-check", content: "Gulp, Webpack, Grunt" },
+        { icon: "fa-solid fa-check", content: "GIT knowledge" },
       ],
     };
   },
