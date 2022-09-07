@@ -35,6 +35,9 @@ body {
   box-sizing: border-box;
 }
 .row {
+  display: grid;
+  align-items: center;
+  justify-content: center;
   margin-left: -15px;
   margin-right: -15px;
   padding: 0 30px;
@@ -125,14 +128,12 @@ a {
     #1e1e28 100%
   );
 }
-.row {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-}
 .p-lr-12 {
   padding-left: 12px;
   padding-right: 12px;
+}
+.mb {
+  margin-bottom: 30px;
 }
 ul {
   padding-inline-start: 0;
@@ -164,6 +165,9 @@ li {
     margin: 0 auto;
     height: 100%;
   }
+}
+.active-route {
+  color: #fafafc;
 }
 </style>
 
