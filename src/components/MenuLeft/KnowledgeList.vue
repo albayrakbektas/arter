@@ -1,9 +1,13 @@
 <template>
-  <div>
+  <div :class="elementClass">
     <ul>
-      <li v-for="(item, index) of knowledgeList" :key="index">
-        <i class="fa-solid fa-check"></i>
-        {{ item }}
+      <li
+        class="knowledge-list-item"
+        v-for="(item, index) of knowledgeList"
+        :key="index"
+      >
+        <i :class="item.icon"></i>
+        {{ item.content }}
       </li>
     </ul>
   </div>
@@ -12,15 +16,9 @@
 <script>
 export default {
   name: "KnowledgeList",
-  data() {
-    return {
-      knowledgeList: [
-        "Bootstrap, Materialize",
-        "Stylus, Sass, Less",
-        "Gulp, Webpack, Grunt",
-        "GIT knowledge",
-      ],
-    };
+  props: {
+    elementClass: String,
+    knowledgeList: Array,
   },
 };
 </script>
@@ -34,6 +32,13 @@ i {
   font-size: 9px;
   color: #ffc107;
   font-weight: 900;
+}
+.fa-circle {
+  color: #1e1e28;
+  font-size: 5px;
+  border: 2px solid #ffc107;
+  border-radius: 50%;
+  box-sizing: border-box;
 }
 li {
   list-style: none;
