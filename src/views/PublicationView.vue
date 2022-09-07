@@ -1,10 +1,10 @@
 <template>
   <LayoutPage>
     <div class="row">
-      <PublicationHeader />
-      <PublicationFullImg />
+      <PublicationHeader :card="header" />
+      <PublicationFullImg :img="img" />
       <PublicationContent />
-      <FooterNavigation />
+      <FooterNavigation :card="card" />
     </div>
   </LayoutPage>
 </template>
@@ -23,6 +23,27 @@ export default {
     PublicationFullImg,
     PublicationHeader,
     LayoutPage,
+  },
+  data() {
+    return {
+      header: {
+        title: "Publication",
+        content: "Ui Design, Graphic",
+      },
+      img: {
+        src: require("../assets/img/blog/publication/2.jpeg"),
+        alt: "",
+      },
+      card: {
+        prevLink: "previous post",
+        allLink: {
+          content: "all publications",
+          href: "#",
+          route: "blog",
+        },
+        nextLink: "previous post",
+      },
+    };
   },
 };
 </script>

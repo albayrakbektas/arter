@@ -14,37 +14,47 @@ const routes = [
     path: "/portfolio",
     name: "portfolio",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/PortfolioView.vue"),
+      import(/* webpackChunkName: "portfolio" */ "../views/PortfolioView.vue"),
+  },
+  {
+    path: "/singleproject",
+    name: "singleproject",
+    component: () =>
+      import(
+        /* webpackChunkName: "singleproject" */ "../views/SingleProject.vue"
+      ),
   },
   {
     path: "/history",
     name: "history",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/HistoryView.vue"),
+      import(/* webpackChunkName: "history" */ "../views/HistoryView.vue"),
   },
   {
     path: "/contact",
     name: "contact",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/ContactView.vue"),
+      import(/* webpackChunkName: "contact" */ "../views/ContactView.vue"),
   },
   {
     path: "/blog",
     name: "blog",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/BlogView.vue"),
+      import(/* webpackChunkName: "blog" */ "../views/BlogView.vue"),
   },
   {
     path: "/publication",
     name: "publication",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/PublicationView.vue"),
+      import(
+        /* webpackChunkName: "publication" */ "../views/PublicationView.vue"
+      ),
   },
   {
     path: "/onepage",
     name: "onepage",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/OnePageView.vue"),
+      import(/* webpackChunkName: "onepage" */ "../views/OnePageView.vue"),
   },
 ];
 

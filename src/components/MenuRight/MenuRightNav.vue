@@ -47,12 +47,12 @@ export default {
             },
             {
               textContent: "single project",
-              href: "portfolio",
+              href: "singleproject",
               layoutGrid: "single-project",
             },
             {
               textContent: "single project 2",
-              href: "portfolio",
+              href: "singleproject",
               layoutGrid: "single-project-two",
             },
           ],

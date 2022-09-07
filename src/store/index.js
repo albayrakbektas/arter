@@ -9,7 +9,7 @@ export default new Vuex.Store({
     isFullScreen: false,
     isDesktopView: window.innerWidth >= 900,
     layoutGrid: "",
-    // layoutGrid: "masonry-with-columns",
+    singlePortfolioPage: true,
     isLeftMenuActive: false,
     isRightMenuActive: false,
     isRightMenuNotActive: true,

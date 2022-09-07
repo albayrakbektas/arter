@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <h4>Recommendations</h4>
+    <PublicationHeader :card="header" />
     <div class="recommendations-scroll-x">
       <div @mousedown="touchEnd" @mouseup="touchStart" class="scroll-hidden">
         <RecommendationCard
@@ -22,9 +22,18 @@
 import RecommendationCard from "@/components/Pages/Home/recommendation/RecommendationCard";
 import SwiperBullet from "@/components/Pages/Home/recommendation/SwiperBullet";
 import SwiperNav from "@/components/Pages/Home/recommendation/SwiperNav";
+import PublicationHeader from "@/components/Pages/Publication/PublicationHeader";
 export default {
   name: "RecommendationCards",
-  components: { SwiperNav, SwiperBullet, RecommendationCard },
+  props: {
+    header: Object,
+  },
+  components: {
+    PublicationHeader,
+    SwiperNav,
+    SwiperBullet,
+    RecommendationCard,
+  },
   methods: {
     touchStart(e) {
       console.log(e.target.deltaX, e.deltaX);

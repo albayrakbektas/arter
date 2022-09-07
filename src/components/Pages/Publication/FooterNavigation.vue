@@ -2,13 +2,18 @@
   <div class="navigation-footer">
     <router-link to="#" class="link-yellow">
       <i class="fa-solid fa-chevron-left"></i>
-      previous post
+      {{ card.prevLink }}
     </router-link>
-    <router-link v-if="$store.state.isDesktopView" to="#" class="all-pub-link">
-      all publications
+    <router-link
+      v-if="$store.state.isDesktopView"
+      :to="card.allLink.href"
+      @click.native="setGrid"
+      class="all-pub-link"
+    >
+      {{ card.allLink.content }}
     </router-link>
     <router-link to="#" class="link-yellow">
-      previous post
+      {{ card.nextLink }}
       <i class="fa-solid fa-chevron-right"></i>
     </router-link>
   </div>
@@ -17,6 +22,15 @@
 <script>
 export default {
   name: "FooterNavigation",
+  props: {
+    card: Object,
+  },
+  methods: {
+    setGrid() {
+      this.$store.state.layoutGrid = "three-column-grid";
+      this.$router.push(this.$props.card.allLink.route);
+    },
+  },
 };
 </script>
 

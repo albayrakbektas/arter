@@ -1,8 +1,8 @@
 <template>
   <div class="publication-header">
-    <h4>Publication</h4>
-    <div class="card-date-container">
-      <span class="card-date">Ui Design, Graphic </span>
+    <h4>{{ card.title }}</h4>
+    <div v-if="card.content" class="card-date-container">
+      <span class="card-date">{{ card.content }}</span>
     </div>
   </div>
 </template>
@@ -10,6 +10,9 @@
 <script>
 export default {
   name: "PublicationHeader",
+  props: {
+    card: Object,
+  },
 };
 </script>
 
@@ -34,6 +37,7 @@ h4 {
   grid-template-rows: repeat(2, auto);
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 @media (min-width: 900px) {
   h4 {

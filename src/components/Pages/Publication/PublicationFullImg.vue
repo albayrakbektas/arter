@@ -1,10 +1,6 @@
 <template>
   <router-link class="card-image-href" to="#">
-    <img
-      class="card-image"
-      src="../../../assets/img/blog/publication/2.jpeg"
-      alt=""
-    />
+    <img class="card-image" :src="img.src" :alt="img.alt" />
     <i class="fas fa-expand"></i>
   </router-link>
 </template>
@@ -12,6 +8,12 @@
 <script>
 export default {
   name: "PublicationFullImg",
+  props: {
+    img: {
+      src: String,
+      alt: String,
+    },
+  },
 };
 </script>
 

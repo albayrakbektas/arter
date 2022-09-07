@@ -4,7 +4,7 @@
     <ExperienceCards />
     <MyServices />
     <PricePlans />
-    <RecommendationCards />
+    <RecommendationCards :header="header" />
   </LayoutPage>
 </template>
 
@@ -24,6 +24,13 @@ export default {
     MyServices,
     ExperienceCards,
     FirstSection,
+  },
+  data() {
+    return {
+      header: {
+        title: "Recommendations",
+      },
+    };
   },
 };
 </script>

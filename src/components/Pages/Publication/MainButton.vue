@@ -1,5 +1,5 @@
 <template>
-  <router-link class="router-button" to="#">
+  <router-link class="router-button" :to="button.href || '#'">
     <span>{{ button.content }}</span>
     <slot></slot>
   </router-link>
