@@ -3,7 +3,7 @@
     <div class="card-top">
       <div class="card-top-left">
         <h5>{{ card.title }}</h5>
-        <p v-if="card.subTitle" class="sub-title">Student</p>
+        <p v-if="card.subTitle" class="sub-title">{{ card.subTitle }}</p>
       </div>
       <div v-if="card.date" class="card-date-container">
         <span class="card-date">{{ card.date || "jan 2018 - may 2020" }}</span>
