@@ -87,7 +87,7 @@ export default {
         },
         {
           textContent: "onepage",
-          href: "#.",
+          href: "onepage",
         },
       ],
     };

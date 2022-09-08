@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="!$store.state.isOnePage"
     class="menu-right-container menu-container"
     :class="[
       { 'active-menu-right': $store.state.isRightMenuActive },

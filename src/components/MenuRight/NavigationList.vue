@@ -4,7 +4,10 @@
     class="menu-item"
     :class="{ 'menu-item-dropdown': item.subItems }"
   >
-    <router-link :to="item.href">
+    <router-link
+      :to="item.href"
+      :target="item.href === 'onepage' ? '_blank' : null"
+    >
       <span ref="route-name">
         {{ item.textContent }}
       </span>

@@ -21,7 +21,7 @@
       </div>
       <div class="menu-left-container-header menu-container-header bg-linear">
         <ProfileAvatar />
-        <router-link to="#.">
+        <router-link to="/">
           <h5>Bektas Albayrak</h5>
         </router-link>
         <router-link to="#.">
