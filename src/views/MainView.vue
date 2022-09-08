@@ -2,7 +2,10 @@
   <div class="main-container">
     <div class="main">
       <MenuLeft />
-      <div class="main-content">
+      <div
+        class="main-content"
+        :class="{ 'onepage-main-content': $store.state.isOnePage }"
+      >
         <router-view />
       </div>
       <MenuRight />
@@ -42,6 +45,9 @@ export default {
     padding-top: 0 !important;
     padding-right: 80px;
     height: calc(100vh - 30px);
+  }
+  .onepage-main-content {
+    padding-right: 0 !important;
   }
 }
 </style>

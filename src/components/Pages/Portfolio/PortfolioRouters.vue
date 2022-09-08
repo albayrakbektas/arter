@@ -1,5 +1,9 @@
 <template>
-  <div class="row">
+  <div
+    class="row"
+    :class="{ 'onepage-header-routers-row': $store.state.isOnePage }"
+  >
+    <h4 v-if="$store.state.isOnePage">Works</h4>
     <div class="header-routers">
       <router-link
         v-for="(item, index) of $store.state.filterLinks"
@@ -53,6 +57,15 @@ a {
   font-weight: 600;
   text-transform: uppercase;
 }
+.onepage-header-routers-row {
+  gap: 15px;
+  text-align: center;
+  padding: 15px;
+  h4 {
+    padding-bottom: 10px;
+    margin: 0;
+  }
+}
 @media (min-width: 900px) {
   .row {
     justify-content: start;
@@ -70,6 +83,18 @@ a {
       &:hover {
         color: #fafafc;
       }
+    }
+  }
+  .onepage-header-routers-row {
+    justify-content: space-between;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
+    text-align: center;
+    padding: 0;
+    width: calc(100% - 30px);
+    h4 {
+      padding-bottom: 10px;
+      margin: 0;
     }
   }
 }
