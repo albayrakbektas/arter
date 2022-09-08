@@ -1,6 +1,6 @@
 <template>
   <div class="navigation-footer">
-    <router-link to="#" class="link-yellow">
+    <router-link @click.native="changeSinglePage" to="#" class="link-yellow">
       <i class="fa-solid fa-chevron-left"></i>
       {{ card.prevLink }}
     </router-link>
@@ -12,7 +12,7 @@
     >
       {{ card.allLink.content }}
     </router-link>
-    <router-link to="#" class="link-yellow">
+    <router-link @click.native="changeSinglePage" to="#" class="link-yellow">
       {{ card.nextLink }}
       <i class="fa-solid fa-chevron-right"></i>
     </router-link>
@@ -26,6 +26,13 @@ export default {
     card: Object,
   },
   methods: {
+    changeSinglePage() {
+      console.log("s");
+      this.$store.state.layoutGrid === "single-project"
+        ? (this.$store.state.layoutGrid = "single-project-two")
+        : (this.$store.state.layoutGrid = "single-project");
+      document.querySelector(".publication-header").scrollIntoView();
+    },
     setGrid() {
       this.$store.state.layoutGrid = "three-column-grid";
       this.$router.push(this.$props.card.allLink.route);
