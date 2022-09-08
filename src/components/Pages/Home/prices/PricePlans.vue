@@ -15,19 +15,19 @@ export default {
       cardList: [
         {
           title: "Starter Price",
-          href: "#",
+          href: "contact",
           info: "Free only when ordering paid services",
         },
         {
           title: "Hourly Payment",
           price: "29",
-          href: "#",
+          href: "contact",
           before: true,
         },
         {
           title: "Full Time",
           price: "2999",
-          href: "#",
+          href: "contact",
         },
       ],
     };

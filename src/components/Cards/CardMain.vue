@@ -10,7 +10,11 @@
       </div>
     </div>
     <p>{{ card.content }}</p>
-    <router-link v-if="!card.emptyRoute" :to="card.href">
+    <router-link
+      v-if="!card.emptyRoute"
+      @click.native="setGridLayout(card)"
+      :to="card.href"
+    >
       {{ card.buttonContent || "order now" }}
       <i class="fa-solid fa-chevron-right"></i>
     </router-link>
@@ -22,6 +26,15 @@ export default {
   name: "CardMain",
   props: {
     card: Object,
+  },
+  methods: {
+    setGridLayout(item) {
+      console.log(item.href);
+      if (item.href === "singleproject") {
+        this.$store.state.layoutGrid = "single-project";
+      }
+      this.$router.push("/singleproject");
+    },
   },
 };
 </script>
