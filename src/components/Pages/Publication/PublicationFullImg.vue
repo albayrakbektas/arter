@@ -83,4 +83,13 @@ i.fa-expand {
     opacity: 1 !important;
   }
 }
+.row {
+  display: block;
+}
+@media (min-width: 900px) {
+  .row {
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+}
 </style>
