@@ -177,16 +177,5 @@ import MainView from "@/views/MainView";
 import FullScreen from "@/components/FullScreen";
 export default {
   components: { FullScreen, MainView, LandingPage },
-  methods: {
-    changeMenuVisiblity(direction) {
-      if (direction === "left") {
-        this.$store.state.isLeftMenuActive =
-          !this.$store.state.isLeftMenuActive;
-      } else if (direction === "right") {
-        this.$store.state.isRightMenuActive =
-          !this.$store.state.isRightMenuActive;
-      }
-    },
-  },
 };
 </script>
