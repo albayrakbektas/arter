@@ -1,21 +1,29 @@
 <template>
   <LayoutPage>
-    <RecommendationCards
-      :header="header"
-      v-if="this.$store.state.layoutGrid === 'single-project'"
-    />
-    <div v-if="this.$store.state.layoutGrid === 'single-project-two'">
-      <PublicationHeader :card="header" class="pd header-width" />
-      <PublicationFullImg class="full-img" :img="img" />
+    <div class="row">
+      <PublicationHeader
+        v-if="this.$store.state.layoutGrid === 'single-project-two'"
+        :card="header"
+        class="pd header-width"
+      />
+      <RecommendationCards
+        :header="header"
+        v-if="this.$store.state.layoutGrid === 'single-project'"
+      />
+      <PublicationFullImg
+        v-if="this.$store.state.layoutGrid === 'single-project-two'"
+        class="full-img"
+        :img="img"
+      />
+      <ProjectDetails />
+      <PortfolioResult
+        v-if="this.$store.state.layoutGrid === 'single-project-two'"
+      />
+      <RecommendationCards :header="headerTwo" />
+      <ExperienceCards class="mt" />
+      <BgCard :button="button" :card="card" class="rel-row mt" />
+      <FooterNavigation :card="footerCard" class="pd" />
     </div>
-    <ProjectDetails />
-    <PortfolioResult
-      v-if="this.$store.state.layoutGrid === 'single-project-two'"
-    />
-    <RecommendationCards :header="headerTwo" />
-    <ExperienceCards class="mt" />
-    <BgCard :button="button" :card="card" class="rel-row mt" />
-    <FooterNavigation :card="footerCard" class="pd" />
   </LayoutPage>
 </template>
 
@@ -58,7 +66,7 @@ export default {
         content: "",
       },
       img: {
-        src: require("../assets/img/blog/publication/2.jpeg"),
+        src: require("../assets/img/portfolio/3.jpeg"),
         alt: "",
       },
       button: {
@@ -96,7 +104,7 @@ export default {
   margin-right: 15px;
 }
 .full-img {
-  left: 15px;
+  left: 0;
   right: 15px;
 }
 .header-width {
