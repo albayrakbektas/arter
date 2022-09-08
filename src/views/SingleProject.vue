@@ -1,15 +1,18 @@
 <template>
   <LayoutPage>
-    <PublicationHeader :card="header" class="pd header-width" />
-    <RecommendationCards v-if="$store.state.layoutGrid === 'single-project'" />
-    <PublicationFullImg
-      v-if="$store.state.layoutGrid === 'single-project-two'"
-      class="full-img"
-      :img="img"
+    <RecommendationCards
+      :header="header"
+      v-if="this.$store.state.layoutGrid === 'single-project'"
     />
+    <div v-if="this.$store.state.layoutGrid === 'single-project-two'">
+      <PublicationHeader :card="header" class="pd header-width" />
+      <PublicationFullImg class="full-img" :img="img" />
+    </div>
     <ProjectDetails />
-    <PortfolioResult v-if="$store.state.layoutGrid === 'single-project-two'" />
-    <RecommendationCards :header="header2" />
+    <PortfolioResult
+      v-if="this.$store.state.layoutGrid === 'single-project-two'"
+    />
+    <RecommendationCards :header="headerTwo" />
     <ExperienceCards class="mt" />
     <BgCard :button="button" :card="card" class="rel-row mt" />
     <FooterNavigation :card="footerCard" class="pd" />
@@ -39,14 +42,20 @@ export default {
     ProjectDetails,
     LayoutPage,
   },
+  mounted() {
+    this.$store.state.layoutGrid = "single-project";
+  },
   data() {
     return {
+      single: true,
+      singleSecond: false,
       header: {
         title: "Title",
         content: "Ui Design, Graphic",
       },
-      header2: {
+      headerTwo: {
         title: "Client reviews",
+        content: "",
       },
       img: {
         src: require("../assets/img/blog/publication/2.jpeg"),

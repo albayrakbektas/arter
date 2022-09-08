@@ -1,6 +1,6 @@
 <template>
   <div class="publication-header">
-    <h4>{{ card.title }}</h4>
+    <h4>{{ card.title || "Title" }}</h4>
     <div v-if="card.content" class="card-date-container">
       <span class="card-date">{{ card.content }}</span>
     </div>
