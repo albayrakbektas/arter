@@ -1,19 +1,15 @@
 <template>
   <LayoutPage>
-    <div class="page-grid">
-      <ContactInformation />
-      <GetInTouch />
-    </div>
+    <ContactGrid />
   </LayoutPage>
 </template>
 
 <script>
 import LayoutPage from "@/components/Layouts/LayoutPage";
-import ContactInformation from "@/components/Pages/Contact/ContactInformation";
-import GetInTouch from "@/components/Pages/Contact/GetInTouch";
+import ContactGrid from "@/components/Pages/Contact/ContactGrid";
 export default {
   name: "ContactView",
-  components: { GetInTouch, ContactInformation, LayoutPage },
+  components: { ContactGrid, LayoutPage },
 };
 </script>
 

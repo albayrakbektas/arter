@@ -1,19 +1,16 @@
 <template>
   <LayoutPage>
-    <div class="grid-column">
-      <CardContainer :title="firstTitle" :card-list="firstList" />
-      <CardContainer :title="secondTitle" :card-list="secondList" />
-    </div>
+    <HistoryGrid />
   </LayoutPage>
 </template>
 
 <script>
 import LayoutPage from "@/components/Layouts/LayoutPage";
-import CardContainer from "@/components/Pages/History/CardContainer";
+import HistoryGrid from "@/components/Pages/History/HistoryGrid";
 export default {
   name: "HistoryView",
   components: {
-    CardContainer,
+    HistoryGrid,
     LayoutPage,
   },
   data() {
@@ -111,14 +108,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.grid-column {
-  width: 100%;
-}
-@media (min-width: 900px) {
-  .grid-column {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-</style>
+<style scoped lang="scss"></style>
