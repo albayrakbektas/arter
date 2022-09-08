@@ -15,6 +15,7 @@ export default new Vuex.Store({
     isRightMenuNotActive: true,
     isSubItems: false,
     isSubItem: false,
+    isOnePage: false,
     xSlideIndex: 0,
     xPosition: 0,
     filterLinks: [
