@@ -18,5 +18,6 @@ export default {
   height: 70px;
   width: 100vw;
   background-color: #20202a;
+  overflow: hidden;
 }
 </style>
