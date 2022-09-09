@@ -21,7 +21,11 @@
       </div>
       <div class="menu-left-container-header menu-container-header bg-linear">
         <ProfileAvatar />
-        <router-link to="/">
+        <router-link
+          :is="$route.name !== 'onepage' ? 'router-link' : 'span'"
+          :to="$route.name !== 'onepage' ? '/' : null"
+          class="span-link"
+        >
           <h5>Bektas Albayrak</h5>
         </router-link>
         <router-link to="#.">
@@ -126,6 +130,13 @@ export default {
 }
 .material-symbols-outlined {
   padding: 30px;
+}
+span.span-link {
+  h5 {
+    &:hover {
+      color: #fafafc;
+    }
+  }
 }
 @media (min-width: 900px) {
   .menu-left-container {
