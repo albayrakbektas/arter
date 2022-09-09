@@ -51,6 +51,7 @@ export default new Vuex.Store({
         href: "singleproject",
         size: "short",
         dataFilter: ".webTemplates",
+        buttonContent: "Read more",
       },
       {
         imageSrc: require("../assets/img/portfolio/2.jpeg"),
@@ -61,6 +62,7 @@ export default new Vuex.Store({
         href: "singleproject",
         size: "tall",
         dataFilter: ".logos",
+        buttonContent: "Read more",
       },
       {
         imageSrc: require("../assets/img/portfolio/3.jpeg"),
@@ -71,6 +73,7 @@ export default new Vuex.Store({
         href: "singleproject",
         size: "short",
         dataFilter: ".drawings",
+        buttonContent: "Read more",
       },
       {
         imageSrc: require("../assets/img/portfolio/4.jpeg"),
@@ -81,6 +84,7 @@ export default new Vuex.Store({
         href: "singleproject",
         size: "short",
         dataFilter: ".ui",
+        buttonContent: "Read more",
       },
       {
         imageSrc: require("../assets/img/portfolio/5.jpeg"),
@@ -91,6 +95,7 @@ export default new Vuex.Store({
         href: "singleproject",
         size: "short",
         dataFilter: ".webTemplates",
+        buttonContent: "Read more",
       },
       {
         imageSrc: require("../assets/img/portfolio/6.jpeg"),
@@ -101,6 +106,7 @@ export default new Vuex.Store({
         href: "singleproject",
         size: "tall",
         dataFilter: ".logos",
+        buttonContent: "Read more",
       },
       {
         imageSrc: require("../assets/img/portfolio/7.jpeg"),
@@ -111,6 +117,7 @@ export default new Vuex.Store({
         href: "singleproject",
         size: "short",
         dataFilter: ".drawings",
+        buttonContent: "Read more",
       },
       {
         imageSrc: require("../assets/img/portfolio/8.jpeg"),
@@ -121,6 +128,7 @@ export default new Vuex.Store({
         href: "singleproject",
         size: "short",
         dataFilter: ".ui",
+        buttonContent: "Read more",
       },
     ],
     blogCardList: [
@@ -131,6 +139,8 @@ export default new Vuex.Store({
         title: "Blog post title",
         content: "Sit amet, consectetur adipisicing elit. Quas, architecto.",
         href: "singleproject",
+        buttonContent: "Read more",
+        isBlog: true,
       },
       {
         imageSrc: require("../assets/img/blog/2.jpeg"),
@@ -139,6 +149,8 @@ export default new Vuex.Store({
         title: "Blog post title",
         content: "Sit amet, consectetur adipisicing elit. Quas, architecto.",
         href: "singleproject",
+        buttonContent: "Read more",
+        isBlog: true,
       },
       {
         imageSrc: require("../assets/img/blog/3.jpeg"),
@@ -147,6 +159,8 @@ export default new Vuex.Store({
         title: "Blog post title",
         content: "Sit amet, consectetur adipisicing elit. Quas, architecto.",
         href: "singleproject",
+        buttonContent: "Read more",
+        isBlog: true,
       },
       {
         imageSrc: require("../assets/img/blog/4.jpeg"),
@@ -155,6 +169,8 @@ export default new Vuex.Store({
         title: "Blog post title",
         content: "Sit amet, consectetur adipisicing elit. Quas, architecto.",
         href: "singleproject",
+        buttonContent: "Read more",
+        isBlog: true,
       },
       {
         imageSrc: require("../assets/img/blog/5.jpeg"),
@@ -163,6 +179,8 @@ export default new Vuex.Store({
         title: "Blog post title",
         content: "Sit amet, consectetur adipisicing elit. Quas, architecto.",
         href: "singleproject",
+        buttonContent: "Read more",
+        isBlog: true,
       },
       {
         imageSrc: require("../assets/img/blog/6.jpeg"),
@@ -171,6 +189,8 @@ export default new Vuex.Store({
         title: "Blog post title",
         content: "Sit amet, consectetur adipisicing elit. Quas, architecto.",
         href: "singleproject",
+        buttonContent: "Read more",
+        isBlog: true,
       },
       {
         imageSrc: require("../assets/img/blog/7.jpeg"),
@@ -179,6 +199,8 @@ export default new Vuex.Store({
         title: "Blog post title",
         content: "Sit amet, consectetur adipisicing elit. Quas, architecto.",
         href: "singleproject",
+        buttonContent: "Read more",
+        isBlog: true,
       },
       {
         imageSrc: require("../assets/img/blog/8.jpeg"),
@@ -187,6 +209,8 @@ export default new Vuex.Store({
         title: "Blog post title",
         content: "Sit amet, consectetur adipisicing elit. Quas, architecto.",
         href: "singleproject",
+        buttonContent: "Read more",
+        isBlog: true,
       },
     ],
   },
