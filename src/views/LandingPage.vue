@@ -27,7 +27,7 @@ export default {
       const a = setInterval(() => {
         this.barValue++;
         this.loading++;
-        if (this.loading > 100) {
+        if (this.loading >= 100) {
           clearInterval(a);
           this.$store.state.loadingPage = false;
         }
