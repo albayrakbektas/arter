@@ -58,6 +58,7 @@ h1 {
 .router-button {
   background-color: #ffc107;
   padding: 5px 35px;
+  height: 45px;
   color: #20202a;
   font-size: 11px;
   display: grid;
