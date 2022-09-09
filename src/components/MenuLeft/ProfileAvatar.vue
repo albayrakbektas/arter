@@ -46,23 +46,23 @@ export default {
   right: 1px;
   bottom: 1px;
   opacity: 0;
-  animation: ani 1s ease-in-out infinite;
+  animation: ani 2s ease-in-out infinite;
 }
 @keyframes ani {
   0% {
-    opacity: 0.2;
+    opacity: 0.1;
   }
   25% {
     opacity: 0.3;
   }
   50% {
-    opacity: 0.4;
+    opacity: 0;
   }
   75% {
     opacity: 0.3;
   }
   100% {
-    opacity: 0;
+    opacity: 0.1;
   }
 }
 a {

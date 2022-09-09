@@ -6,7 +6,7 @@
       $store.state.layoutGrid === 'three-column-masonry'
         ? card.size
         : '',
-      routeName === 'blog' ? 'blog-card-position' : '',
+      routeName === 'blog' || 'onepage' ? 'blog-card-position' : '',
     ]"
   >
     <router-link

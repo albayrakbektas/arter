@@ -41,6 +41,7 @@ h4 {
     grid-template-columns: repeat(2, 1fr);
     display: grid;
     column-gap: 30px;
+    width: calc(100% - 30px);
     .card-image-container {
       position: relative;
       width: unset;

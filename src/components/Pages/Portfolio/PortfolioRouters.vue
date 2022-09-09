@@ -90,7 +90,6 @@ a {
     grid-template-columns: repeat(2, auto);
     gap: 30px;
     text-align: center;
-    padding: 0;
     width: calc(100% - 30px);
     h4 {
       padding-bottom: 10px;

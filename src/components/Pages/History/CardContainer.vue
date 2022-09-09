@@ -51,25 +51,25 @@ h4 {
   &:hover {
     .white-light {
       opacity: 1;
-      animation: ani 1s ease-in-out infinite;
+      animation: ani 2s ease-in-out infinite;
     }
   }
 }
 @keyframes ani {
   0% {
-    opacity: 0.2;
+    opacity: 0.1;
   }
   25% {
     opacity: 0.3;
   }
   50% {
-    opacity: 0.4;
+    opacity: 0;
   }
   75% {
     opacity: 0.3;
   }
   100% {
-    opacity: 0;
+    opacity: 0.1;
   }
 }
 .yellow-light,
@@ -83,7 +83,7 @@ h4 {
   height: 20px;
   width: 20px;
   background-color: #fafafc;
-  right: -2px;
+  right: -2.5px;
   top: 5.5px;
   opacity: 0;
 }
