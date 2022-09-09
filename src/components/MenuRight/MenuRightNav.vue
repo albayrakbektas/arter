@@ -71,12 +71,12 @@ export default {
           subItems: [
             {
               textContent: "2 column",
-              href: "#.",
+              href: "blog",
               layoutGrid: "two-column-grid",
             },
             {
               textContent: "3 Column",
-              href: "#.",
+              href: "blog",
               layoutGrid: "three-column-grid",
             },
             {
