@@ -11,6 +11,7 @@
 <style lang="scss">
 html {
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 .app-content {
   box-sizing: border-box;
@@ -23,9 +24,9 @@ body {
   line-height: 1.5;
   letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
   background: #191923;
 }
+
 #app {
   font-family: Poppins, sans-serif;
   -webkit-font-smoothing: antialiased;
