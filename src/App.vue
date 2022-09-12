@@ -170,6 +170,9 @@ li {
 .active-route {
   color: #fafafc;
 }
+.mb-zero {
+  margin-bottom: 0 !important;
+}
 </style>
 
 <script>
@@ -178,5 +181,6 @@ import MainView from "@/views/MainView";
 import FullScreen from "@/components/FullScreen";
 export default {
   components: { FullScreen, MainView, LandingPage },
+  methods: {},
 };
 </script>
