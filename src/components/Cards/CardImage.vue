@@ -7,6 +7,7 @@
         ? card.size
         : '',
       routeName === 'blog' || card.isBlog ? 'blog-card-position' : '',
+      card.isSlide ? 'mb-zero' : '',
     ]"
   >
     <router-link
@@ -22,7 +23,7 @@
       <img class="card-image" :src="card.imageSrc" :alt="card.imageAlt" />
       <i v-if="routeName !== 'blog'" class="fas fa-expand"></i>
     </router-link>
-    <div class="card-main-abs">
+    <div v-if="!card.isSlide" class="card-main-abs">
       <CardMain :card="card" />
     </div>
   </div>
@@ -116,13 +117,13 @@ i.fa-expand {
 }
 @media (min-width: 900px) {
   .tall {
-    height: 400px;
+    height: 400px !important;
   }
   .medium {
-    height: 300px;
+    height: 300px !important;
   }
   .short {
-    height: 200px;
+    height: 200px !important;
   }
   .card-image-container {
     position: relative;
