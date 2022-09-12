@@ -88,6 +88,26 @@ export default {
       this.$store.state.layoutGrid = item.layoutGrid;
       this.$store.state.isRightMenuActive = false;
       this.$store.state.isRightMenuNotActive = true;
+      if (item.layoutGrid === "three-column-masonry") {
+        this.setLayout();
+      }
+    },
+    setLayout() {
+      const container = document.querySelector(".three-column-masonry");
+      for (let i = 0; i < container.length; i++) {
+        if (i % 3 === 0) {
+          container[i].style.top = `${this.firstColumnTop}px`;
+          this.firstColumnTop += container[i].clientHeight;
+        } else if (i % 3 === 1) {
+          container[i].style.left = "30vw";
+          container[i].style.top = `${this.secondColumnTop}px`;
+          this.secondColumnTop += container[i].clientHeight;
+        } else {
+          container[i].style.left = "60vw";
+          container[i].style.top = `${this.thirdColumnTop}px`;
+          this.thirdColumnTop += container[i].clientHeight;
+        }
+      }
     },
   },
 };
