@@ -1,17 +1,17 @@
 <template>
   <LayoutPage>
     <PortfolioRouters />
-    <PortfolioTwoColumn />
+    <PortfolioG />
   </LayoutPage>
 </template>
 
 <script>
 import LayoutPage from "@/components/Layouts/LayoutPage";
-import PortfolioTwoColumn from "@/components/Pages/Portfolio/PortfolioTwoColumn";
 import PortfolioRouters from "@/components/Pages/Portfolio/PortfolioRouters";
+import PortfolioG from "@/components/Pages/Portfolio/PortfolioG";
 export default {
   name: "PortfolioView",
-  components: { PortfolioRouters, PortfolioTwoColumn, LayoutPage },
+  components: { PortfolioG, PortfolioRouters, LayoutPage },
 };
 </script>
 
