@@ -1,47 +1,49 @@
 <template>
   <div class="row">
     <PublicationHeader :card="header" />
-    <div class="recommendations-scroll-x">
-      <div @mousedown="touchEnd" @mouseup="touchStart" class="scroll-hidden">
-        <RecommendationCard
-          v-for="(item, index) of cardList"
-          :card="item"
-          :key="index"
-        />
-      </div>
-      <span class="swiper-notification"></span>
-    </div>
-    <div class="navigation-container">
-      <SwiperBullet :card-list="cardList" />
-      <SwiperNav />
-    </div>
+    <beko-carousel
+      :navigation-enabled="true"
+      :touch-drag="true"
+      :per-page-custom="[900, 2]"
+    >
+      <beko-slide v-for="(item, index) of cardList" :key="index">
+        <RecommendationCard :card="item" :key="index" />
+      </beko-slide>
+    </beko-carousel>
+    <!--    <div class="recommendations-scroll-x">-->
+    <!--      <div @mousedown="touchEnd" @mouseup="touchStart" class="scroll-hidden">-->
+    <!--        <RecommendationCard-->
+    <!--          v-for="(item, index) of cardList"-->
+    <!--          :card="item"-->
+    <!--          :key="index"-->
+    <!--        />-->
+    <!--      </div>-->
+    <!--      <span class="swiper-notification"></span>-->
+    <!--    </div>-->
+    <!--    <div class="navigation-container">-->
+    <!--      <SwiperBullet :card-list="cardList" />-->
+    <!--      <SwiperNav />-->
+    <!--    </div>-->
   </div>
 </template>
 
 <script>
 import RecommendationCard from "@/components/Pages/Home/recommendation/RecommendationCard";
-import SwiperBullet from "@/components/Pages/Home/recommendation/SwiperBullet";
-import SwiperNav from "@/components/Pages/Home/recommendation/SwiperNav";
 import PublicationHeader from "@/components/Pages/Publication/PublicationHeader";
+import BekoCarousel from "@/components/Carousel/BekoCarousel";
+import BekoSlide from "@/components/Carousel/BekoSlide";
 export default {
   name: "RecommendationCards",
   props: {
     header: Object,
   },
   components: {
+    BekoSlide,
+    BekoCarousel,
     PublicationHeader,
-    SwiperNav,
-    SwiperBullet,
     RecommendationCard,
   },
-  methods: {
-    touchStart(e) {
-      console.log(e.target.deltaX, e.deltaX);
-    },
-    touchEnd(e) {
-      console.log(e.target.deltaX, e.deltaX);
-    },
-  },
+  methods: {},
   data() {
     return {
       cardList: [
@@ -88,6 +90,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.publication-header {
+  justify-content: left !important;
+}
 .row {
   grid-auto-rows: auto;
   width: 343px;
