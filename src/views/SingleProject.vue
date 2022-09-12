@@ -2,11 +2,14 @@
   <LayoutPage>
     <div class="row">
       <PublicationHeader
-        v-if="this.$store.state.layoutGrid === 'single-project-two'"
+        v-if="
+          this.$store.state.layoutGrid === 'single-project-two' ||
+          'single-project'
+        "
         :card="header"
         class="pd header-width"
       />
-      <RecommendationCards
+      <CardImageSlider
         :header="header"
         v-if="this.$store.state.layoutGrid === 'single-project'"
       />
@@ -37,9 +40,11 @@ import RecommendationCards from "@/components/Pages/Home/recommendation/Recommen
 import PublicationFullImg from "@/components/Pages/Publication/PublicationFullImg";
 import PublicationHeader from "@/components/Pages/Publication/PublicationHeader";
 import PortfolioResult from "@/components/Pages/SingleProject/PortfolioResult";
+import CardImageSlider from "@/components/Pages/SingleProject/CardImageSlider";
 export default {
   name: "SingleProject",
   components: {
+    CardImageSlider,
     PortfolioResult,
     PublicationHeader,
     PublicationFullImg,
