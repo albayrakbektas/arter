@@ -116,7 +116,6 @@ export default {
   display: flex;
   height: 100vh;
   overflow-y: scroll;
-  //height: 100%;
 }
 ::-webkit-scrollbar {
   display: none;
