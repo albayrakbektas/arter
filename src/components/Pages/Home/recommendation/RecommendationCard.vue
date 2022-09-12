@@ -41,11 +41,6 @@ export default {
 <style lang="scss" scoped>
 .recommendation-card-container-parent {
   position: relative;
-  margin-right: 30px;
-  width: 343px;
-  flex-shrink: 0;
-  -webkit-transform: translate3d(0px, 0px, 0px);
-  transform: translate3d(0px, 0px, 0px);
 }
 .recommendation-card-container {
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
@@ -107,8 +102,6 @@ i {
 }
 @media (min-width: 900px) {
   .recommendation-card-container-parent {
-    width: 475px;
-    padding-right: 30px;
   }
 }
 </style>
