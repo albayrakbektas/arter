@@ -4,26 +4,13 @@
     <beko-carousel
       :navigation-enabled="true"
       :touch-drag="true"
-      :per-page-custom="[900, 2]"
+      :per-page-custom="[[900, 2]]"
+      :scroll-per-page="false"
     >
       <beko-slide v-for="(item, index) of cardList" :key="index">
         <RecommendationCard :card="item" :key="index" />
       </beko-slide>
     </beko-carousel>
-    <!--    <div class="recommendations-scroll-x">-->
-    <!--      <div @mousedown="touchEnd" @mouseup="touchStart" class="scroll-hidden">-->
-    <!--        <RecommendationCard-->
-    <!--          v-for="(item, index) of cardList"-->
-    <!--          :card="item"-->
-    <!--          :key="index"-->
-    <!--        />-->
-    <!--      </div>-->
-    <!--      <span class="swiper-notification"></span>-->
-    <!--    </div>-->
-    <!--    <div class="navigation-container">-->
-    <!--      <SwiperBullet :card-list="cardList" />-->
-    <!--      <SwiperNav />-->
-    <!--    </div>-->
   </div>
 </template>
 
