@@ -23,7 +23,7 @@
       <img class="card-image" :src="card.imageSrc" :alt="card.imageAlt" />
       <i v-if="routeName !== 'blog'" class="fas fa-expand"></i>
     </router-link>
-    <div v-if="!card.isSlide" class="card-main-abs">
+    <div v-if="card.isSlide === 1 || !card.isSlide" class="card-main-abs">
       <CardMain :card="card" />
     </div>
   </div>
