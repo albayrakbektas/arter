@@ -2,7 +2,7 @@
   <div class="beko-pagination">
     <div class="beko-carousel-dot-container">
       <button
-        v-for="(item, index) of paginationCount - 1"
+        v-for="(item, index) of paginationCount"
         :key="`${item}_${index}`"
         class="beko-carousel-dot"
         :class="{ 'beko-carousel-dot--active': isCurrentDot(index) }"
@@ -17,13 +17,14 @@ export default {
   name: "BekoPagination",
   inject: ["carousel"],
   mounted() {
-    console.log(this.paginationCount, this.carousel.slideCount);
+    // console.log(this.paginationCount, this.carousel.slideCount);
   },
   computed: {
     paginationCount() {
+      const perPageCustom = this.carousel.perPageCustom[0][1];
       return this.carousel && this.carousel.scrollPerPage
         ? this.carousel.pageCount
-        : this.carousel.slideCount || 0;
+        : this.carousel.slideCount - perPageCustom + 1 || 0;
     },
   },
   methods: {
