@@ -102,6 +102,7 @@ i {
 }
 @media (min-width: 900px) {
   .recommendation-card-container-parent {
+    width: calc(100% - 15px);
   }
 }
 </style>
