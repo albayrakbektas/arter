@@ -2,7 +2,10 @@
   <div
     ref="row"
     class="row"
-    :class="[$store.state.layoutGrid || 'two-column-grid']"
+    :class="[
+      $store.state.layoutGrid || 'two-column-grid',
+      $route.name === 'onepage' ? 'three-column-masonry' : '',
+    ]"
   >
     <CardImage
       v-for="(item, index) of $store.state.showingPortfolioCards"
