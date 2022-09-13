@@ -117,13 +117,13 @@ i.fa-expand {
 }
 @media (min-width: 900px) {
   .tall {
-    height: 400px !important;
+    height: 450px !important;
   }
   .medium {
-    height: 300px !important;
+    height: calc((450px * 2 - 30px) / 3) !important;
   }
   .short {
-    height: 200px !important;
+    height: calc((450px - 30px) / 2) !important;
   }
   .card-image-container {
     position: relative;
