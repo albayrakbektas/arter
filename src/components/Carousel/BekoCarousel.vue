@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import autoplay from "@/mixins/autoplay";
 import debounce from "@/utils/debounce";
 import BekoNavigation from "@/components/Carousel/BekoNavigation";
 import BekoPagination from "@/components/Carousel/BekoPagination";
@@ -66,6 +67,7 @@ export default {
     this.computeCarouselWidth();
   },
   components: { BekoPagination, BekoNavigation },
+  mixins: [autoplay],
   provide() {
     return {
       carousel: this,
@@ -255,6 +257,13 @@ export default {
       this.$emit("page-change", val);
       this.$emit("input", val);
     },
+    autoplay(val) {
+      if (val === false) {
+        this.pauseAutoplay();
+      } else {
+        this.restartAutoplay();
+      }
+    },
   },
   computed: {
     breakpointSlidesPerPage() {
@@ -262,14 +271,17 @@ export default {
         return this.perPage;
       }
       const breakpointArray = this.perPageCustom;
-      const width = this.browserWidth;
+      const width = this.browserWidth || 1440;
       const breakpoints = breakpointArray.sort((a, b) =>
         a[0] > b[0] ? -1 : 1
       );
       const matches = breakpoints.filter(
         (breakpoint) => width >= breakpoint[0]
       );
+      // console.log(matches[0], matches[0][1]);
+      // breakpoints.forEach((breakpoint) => console.log(breakpoint[0]));
       const match = matches[0] && matches[0][1];
+      console.log(match, this.perPage);
       return match || this.perPage;
     },
     canAdvanceForward() {
@@ -345,7 +357,7 @@ export default {
       }
     },
     getNextPage() {
-      if (this.currentPage < this.pageCount - 1) {
+      if (this.currentPage < this.pageCount) {
         return this.currentPage + 1;
       }
       return this.loop ? 0 : this.currentPage;
@@ -365,6 +377,15 @@ export default {
       ) {
         this.goToPage(this.getNextPage(), "navigation");
       }
+    },
+    goToLastSlide() {
+      this.dragging = true;
+      setTimeout(() => {
+        this.dragging = false;
+      }, this.refreshRate);
+      this.$nextTick(() => {
+        this.goToPage(this.pageCount);
+      });
     },
     attachMutationObserver() {
       const MutationObserver = window.MutationObserver;
@@ -398,6 +419,7 @@ export default {
     },
     handleNavigation(direction) {
       this.advancePage(direction);
+      this.pauseAutoplay();
       this.$emit("navigation-click", direction);
     },
     detachMutationObserver() {
@@ -447,10 +469,13 @@ export default {
               this.maxOffset
             )
           : this.slideWidth * page;
-      }
-      this.currentPage = page;
-      if (advanceType === "pagination") {
-        this.$emit("pagination-click", page);
+        if (this.autoplay && !this.autoplayHoverPause) {
+          this.restartAutoplay();
+        }
+        this.currentPage = page;
+        if (advanceType === "pagination") {
+          this.$emit("pagination-click", page);
+        }
       }
     },
     onStart(e) {
@@ -473,6 +498,10 @@ export default {
       this.dragStartY = this.isTouch ? e.touches[0].clientY : e.clientY;
     },
     onEnd(e) {
+      if (this.autoplay && !this.autoplayHoverPause) {
+        this.restartAutoplay();
+      }
+      this.pauseAutoplay();
       const eventPosX = this.isTouch ? e.changedTouches[0].clientX : e.clientX;
       const deltaX = this.dragStartX - eventPosX;
       this.dragMomentum = deltaX / (e.timeStamp - this.startTime);
@@ -602,7 +631,7 @@ export default {
       "resize",
       debounce(this.onResize, this.refreshRate)
     );
-    // this.getSlideCount();
+    this.getSlideCount();
     this.activeSlides();
     if ((this.isTouch && this.touchDrag) || this.mouseDrag) {
       this.$refs["beko-carousel-wrapper"].addEventListener(
@@ -623,6 +652,9 @@ export default {
       this.handleTransitionEnd
     );
     this.$emit("mounted");
+    if (this.autoplayDirection === "backward") {
+      this.goToLastSlide();
+    }
   },
   beforeDestroy() {
     this.detachMutationObserver();
