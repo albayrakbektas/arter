@@ -1,7 +1,29 @@
 <template>
-  <div class="row" :class="[$store.state.layoutGrid || 'two-column-grid']">
+  <div
+    class="row"
+    :class="[
+      $store.state.layoutGrid || 'two-column-grid',
+      $route.name === 'onepage' ? 'onepage-grid' : '',
+    ]"
+  >
     <h4>Newsletter</h4>
+    <beko-carousel
+      v-if="$route.name === 'onepage'"
+      :scroll-per-page="false"
+      :per-page-custom="[[900, 3]]"
+      :autoplay="true"
+      :loop="true"
+      :navigation-enabled="true"
+    >
+      <beko-slide
+        v-for="(item, index) of $store.state.blogCardList"
+        :key="index"
+      >
+        <CardImage :card="item" :key="index" />
+      </beko-slide>
+    </beko-carousel>
     <CardImage
+      v-else
       v-for="(item, index) of $store.state.blogCardList"
       :card="item"
       :key="index"
@@ -11,9 +33,11 @@
 
 <script>
 import CardImage from "@/components/Cards/CardImage";
+import BekoCarousel from "@/components/Carousel/BekoCarousel";
+import BekoSlide from "@/components/Carousel/BekoSlide";
 export default {
   name: "GridLayout",
-  components: { CardImage },
+  components: { BekoSlide, BekoCarousel, CardImage },
 };
 </script>
 
@@ -25,6 +49,9 @@ h4 {
   font-size: 17px;
   margin: 30px 0;
   text-align: center;
+}
+.onepage-grid {
+  display: block;
 }
 @media (min-width: 900px) {
   .row {
