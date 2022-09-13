@@ -16,10 +16,14 @@
       :navigation-enabled="true"
     >
       <beko-slide
-        v-for="(item, index) of $store.state.blogCardList"
+        v-for="(item, index) of $store.state.blogCardList.slice(0, 5)"
         :key="index"
       >
-        <CardImage :card="item" :key="index" />
+        <CardImage
+          :style="{ width: 'calc(100% - 15px)' }"
+          :card="item"
+          :key="index"
+        />
       </beko-slide>
     </beko-carousel>
     <CardImage
@@ -54,6 +58,9 @@ h4 {
   display: block;
 }
 @media (min-width: 900px) {
+  .onepage-grid {
+    display: block;
+  }
   .row {
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
