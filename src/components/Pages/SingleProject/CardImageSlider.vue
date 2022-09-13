@@ -3,10 +3,18 @@
     <beko-carousel
       :navigation-enabled="true"
       :wrapperOverflow="'hidden'"
-      :per-page-custom="[900, 2]"
+      :per-page-custom="perPageCustom || [[900, 2]]"
+      :scroll-per-page="false"
+      :autoplay="true"
+      :loop="true"
     >
-      <beko-slide v-for="(item, index) of cardImageList" :key="index">
-        <CardImage :card="item" />
+      <beko-slide
+        v-for="(item, index) of cardList || cardImageList"
+        :key="index"
+      >
+        <div class="pd">
+          <CardImage :card="item" />
+        </div>
       </beko-slide>
     </beko-carousel>
   </div>
@@ -19,6 +27,10 @@ import CardImage from "@/components/Cards/CardImage";
 export default {
   name: "CardImageSlider",
   components: { CardImage, BekoSlide, BekoCarousel },
+  props: {
+    cardList: Array,
+    perPageCustom: Array,
+  },
   data() {
     return {
       cardImageList: [
@@ -61,5 +73,8 @@ export default {
 <style lang="scss" scoped>
 .slider-row {
   margin: 0 15px;
+}
+.pd {
+  padding: 0 15px 0 0;
 }
 </style>
