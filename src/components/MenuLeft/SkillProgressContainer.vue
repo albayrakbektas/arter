@@ -17,24 +17,20 @@ export default {
     return {
       skillList: [
         {
-          name: "html",
+          name: "HTML",
           percent: "90",
         },
         {
           name: "CSS",
-          percent: "95",
+          percent: "85",
         },
         {
-          name: "Js",
+          name: "JavaScript",
           percent: "75",
         },
         {
-          name: "PHP",
-          percent: "65",
-        },
-        {
-          name: "Wordpress",
-          percent: "85",
+          name: "Flutter",
+          percent: "45",
         },
       ],
     };

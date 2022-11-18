@@ -74,7 +74,7 @@ export default {
     transition: 0.4s ease-in-out;
   }
   .link-yellow {
-    color: #ffc107;
+    color: #ff0000;
   }
 }
 @media (min-width: 900px) {

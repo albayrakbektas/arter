@@ -56,17 +56,17 @@ a {
 }
 a,
 i {
-  color: #ffc107;
+  color: #ff0000;
 }
 .price-mount {
-  color: #ffc107;
+  color: #ff0000;
   font-size: 32px;
   font-weight: 600;
   text-align: center;
   margin-bottom: 30px;
   sup {
     font-size: 14px;
-    color: #ffc107;
+    color: #ff0000;
     opacity: 0.5;
   }
   span {
@@ -91,7 +91,7 @@ i {
 .price-card-before::before {
   position: absolute;
   content: "POPULAR";
-  background-color: #ffc107;
+  background-color: #ff0000;
   color: #1e1e28;
   font-weight: 600;
   padding: 2px;

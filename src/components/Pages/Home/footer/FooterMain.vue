@@ -1,10 +1,10 @@
 <template>
   <div class="row">
     <div class="footer-container">
-      <div class="footer-left">© 2021 Artur Carter</div>
+      <div class="footer-left">© 2022 Bektas Albayrak</div>
       <div class="footer-right">
         Template author:&nbsp;
-        <a href="#" target="_blank"> Nazar Miller </a>
+        <span> Nazar Miller </span>
       </div>
     </div>
   </div>

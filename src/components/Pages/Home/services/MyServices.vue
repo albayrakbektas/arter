@@ -20,25 +20,13 @@ export default {
           href: "contact",
         },
         {
-          title: "UI/UX Design",
+          title: "Mobile Development",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.",
           href: "contact",
         },
         {
-          title: "Sound Design",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.",
-          href: "contact",
-        },
-        {
-          title: "Game Design",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.",
-          href: "contact",
-        },
-        {
-          title: "Advertising",
+          title: "UI Testing",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.",
           href: "contact",

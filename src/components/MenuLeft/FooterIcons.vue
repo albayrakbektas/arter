@@ -1,12 +1,13 @@
 <template>
   <div class="social-media-icon-container">
-    <router-link
+    <a
       v-for="(item, index) of socialMediaIconList"
       :key="index"
-      :to="item.href"
+      :href="item.href"
+      target="_blank"
     >
       <i :class="item.name"></i>
-    </router-link>
+    </a>
   </div>
 </template>
 
@@ -18,23 +19,15 @@ export default {
       socialMediaIconList: [
         {
           name: "fa-brands fa-linkedin-in",
-          href: "#.",
-        },
-        {
-          name: "fa-brands fa-dribbble",
-          href: "#.",
-        },
-        {
-          name: "fa-brands fa-behance",
-          href: "#.",
+          href: "https://www.linkedin.com/in/bekta%C5%9F-albayrak-ab6aa71b2",
         },
         {
           name: "fa-brands fa-github",
-          href: "#.",
+          href: "https://github.com/albayrakbektas",
         },
         {
-          name: "fa-brands fa-twitter",
-          href: "#.",
+          name: "fa-brands fa-instagram",
+          href: "https://www.instagram.com/albaybektas",
         },
       ],
     };
@@ -52,9 +45,15 @@ export default {
   a {
     display: flex;
     justify-content: center;
+    &:hover {
+      i {
+        color: #fafafc;
+      }
+    }
   }
 }
 i {
+  color: #ff0000;
   transition: 0.4s ease-in-out;
   &:hover {
     color: #fafafc;

@@ -19,11 +19,10 @@ export default {
       secondTitle: "Work History",
       firstList: [
         {
-          title: "University of toronto",
+          title: "Dokuz Eylul University",
           subTitle: "Student",
-          date: "jan 2018 - may 2020",
-          content:
-            "Dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.",
+          date: "2017 - Present",
+          content: "Final Year of Department of Mathematics",
           href: "#",
           isAfter: true,
           buttonContent: "diplome",

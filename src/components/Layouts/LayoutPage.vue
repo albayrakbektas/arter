@@ -9,7 +9,7 @@
     <div class="rows">
       <div class="scroll-rows">
         <slot></slot>
-        <BrandCards />
+        <!--        <BrandCards />-->
         <FooterMain />
       </div>
     </div>
@@ -17,13 +17,11 @@
 </template>
 
 <script>
-import BrandCards from "@/components/Pages/Home/brand/BrandCards";
 import FooterMain from "@/components/Pages/Home/footer/FooterMain";
 export default {
   name: "LayoutPage",
   components: {
     FooterMain,
-    BrandCards,
   },
 };
 </script>

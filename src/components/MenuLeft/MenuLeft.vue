@@ -28,10 +28,10 @@
         >
           <h5>Bektas Albayrak</h5>
         </router-link>
-        <router-link to="#.">
+        <router-link to="/portfolio">
           <p>
             Front-end Developer <br />
-            UI/UX Designer
+            UI Tester
           </p>
         </router-link>
       </div>
@@ -93,10 +93,12 @@ export default {
   }
   h5 {
     font-size: 15px;
-    color: #fafafc;
+    color: #ff0000;
+    filter: brightness(80%);
     transition: 0.4s ease-in-out;
     &:hover {
-      color: #ffc107;
+      color: #ff0000;
+      filter: brightness(100%);
     }
   }
   p {

@@ -12,11 +12,11 @@
           <span>EXPLORE NOW</span>
         </router-link>
       </div>
-      <img
-        class="profile-photo"
-        src="../../../../assets/img/face-2.png"
-        alt="profile photo"
-      />
+      <!--      <img-->
+      <!--        class="profile-photo"-->
+      <!--        src="../../../../assets/img/bektasalbayrak.jpg"-->
+      <!--        alt="profile photo"-->
+      <!--      />-->
     </div>
   </div>
 </template>
@@ -56,10 +56,11 @@ h1 {
   );
 }
 .router-button {
-  background-color: #ffc107;
+  background-color: #ff0000;
   padding: 5px 35px;
+  filter: brightness(80%);
   height: 45px;
-  color: #20202a;
+  color: #ffffff;
   font-size: 11px;
   display: grid;
   align-items: center;
@@ -67,6 +68,7 @@ h1 {
   margin: 0 auto;
   transition: 0.4s ease-in-out;
   &:hover {
+    filter: brightness(100%);
     transform: translateY(-2px);
   }
 }

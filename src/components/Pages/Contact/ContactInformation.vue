@@ -7,9 +7,9 @@
     <div class="table-padding">
       <TableInfo :table-list="mailList" />
     </div>
-    <div class="table-padding">
-      <TableInfo :table-list="phoneList" />
-    </div>
+    <!--    <div class="table-padding">-->
+    <!--      <TableInfo :table-list="phoneList" />-->
+    <!--    </div>-->
   </div>
 </template>
 
@@ -23,45 +23,45 @@ export default {
       addressList: [
         {
           key: "Country:",
-          value: "Canada",
+          value: "Turkey",
         },
         {
           key: "City:",
-          value: "Toronto",
+          value: "Izmir",
         },
         {
           key: "Street:",
-          value: "20 Dellbank Rd",
+          value: "Bornova",
         },
       ],
       mailList: [
         {
           key: "Email:",
-          value: "carter.inbox@mail.com",
+          value: "albayrakbektas44@gmail.com",
         },
         {
           key: "Telegram:",
-          value: "@arter",
+          value: "@albybk",
         },
         {
           key: "Skype:",
-          value: "Arter",
+          value: "-",
         },
       ],
-      phoneList: [
-        {
-          key: "Support service:",
-          value: "+78 (098) 333 11 22",
-        },
-        {
-          key: "Office:",
-          value: "+78 (098) 333 11 22",
-        },
-        {
-          key: "Personal:",
-          value: "+78 (098) 333 11 22",
-        },
-      ],
+      // phoneList: [
+      //   {
+      //     key: "Support service:",
+      //     value: "+78 (098) 333 11 22",
+      //   },
+      //   {
+      //     key: "Office:",
+      //     value: "+78 (098) 333 11 22",
+      //   },
+      //   {
+      //     key: "Personal:",
+      //     value: "+78 (098) 333 11 22",
+      //   },
+      // ],
     };
   },
 };

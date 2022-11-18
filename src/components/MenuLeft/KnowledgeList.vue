@@ -30,13 +30,13 @@ ul {
 i {
   margin-right: 5px;
   font-size: 9px;
-  color: #ffc107;
+  color: #ff0000;
   font-weight: 900;
 }
 .fa-circle {
   color: #1e1e28;
   font-size: 5px;
-  border: 2px solid #ffc107;
+  border: 2px solid #ff0000;
   border-radius: 50%;
   box-sizing: border-box;
 }

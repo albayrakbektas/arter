@@ -15,10 +15,10 @@
     <KnowledgeList :knowledge-list="knowledgeList" />
     <div class="divider" />
     <div class="pdf-container">
-      <router-link class="download-pdf" to="#.">
+      <a href="/cv.pdf" download="dene.pdf" class="download-pdf">
         DOWNLOAD CV
         <i class="fa-solid fa-download"></i>
-      </router-link>
+      </a>
     </div>
   </div>
 </template>
@@ -55,22 +55,18 @@ export default {
       ],
       languageCircleList: [
         {
-          language: "french",
+          language: "Turkish",
           percent: "100",
         },
         {
-          language: "english",
+          language: "English",
           percent: "80",
-        },
-        {
-          language: "spanish",
-          percent: "70",
         },
       ],
       knowledgeList: [
-        { icon: "fa-solid fa-check", content: "Bootstrap, Materialize" },
-        { icon: "fa-solid fa-check", content: "Stylus, Sass, Less" },
-        { icon: "fa-solid fa-check", content: "Gulp, Webpack, Grunt" },
+        { icon: "fa-solid fa-check", content: "Vue.js" },
+        { icon: "fa-solid fa-check", content: "Stylus, Sass, Tailwind" },
+        { icon: "fa-solid fa-check", content: "Node.js, Express.js, Firebase" },
         { icon: "fa-solid fa-check", content: "GIT knowledge" },
       ],
     };
@@ -83,6 +79,7 @@ export default {
     this.percentAnimate(0, Number(this.languageCircleList[2].percent), 2000, 3);
   },
   methods: {
+    downloadPdf() {},
     percentAnimate(start, end, duration, n) {
       if (start === end) {
         return;
@@ -97,9 +94,9 @@ export default {
           `div.language-circle-container > div:nth-child(${n}) > div > div.progress-spinner`
         );
         spinner.style.background =
-          "conic-gradient(rgb(255, 193, 7) " +
+          "conic-gradient(rgb(255, 0, 0) " +
           0 +
-          "deg,rgb(255, 193, 7)" +
+          "deg,rgb(255, 0, 0)" +
           current * 3.6 +
           "deg,rgb(0, 0, 0) " +
           current * 3.6 +
@@ -147,6 +144,7 @@ export default {
   line-height: 1.5;
   transition: 0.4s ease-in-out;
   font-weight: 600;
+  cursor: pointer;
 }
 .pdf-container {
   &:hover {

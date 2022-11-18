@@ -1,28 +1,20 @@
 <template>
   <LayoutPage>
     <FirstSection />
-    <ExperienceCards />
     <MyServices />
-    <PricePlans />
-    <RecommendationCards :header="header" />
+    <!--    <RecommendationCards :header="header" />-->
   </LayoutPage>
 </template>
 
 <script>
 import FirstSection from "@/components/Pages/Home/top/FirstSection";
-import ExperienceCards from "@/components/Pages/Home/experience/ExperienceCards";
 import MyServices from "@/components/Pages/Home/services/MyServices";
-import PricePlans from "@/components/Pages/Home/prices/PricePlans";
-import RecommendationCards from "@/components/Pages/Home/recommendation/RecommendationCards";
 import LayoutPage from "@/components/Layouts/LayoutPage";
 export default {
   name: "HomeView",
   components: {
     LayoutPage,
-    RecommendationCards,
-    PricePlans,
     MyServices,
-    ExperienceCards,
     FirstSection,
   },
   data() {

@@ -74,14 +74,14 @@ p {
 progress {
   width: 100%;
   height: 5px;
-  background-color: #ffc107;
+  background-color: #ff0000;
   margin: 10px 0 0;
 }
 progress::-webkit-progress-bar {
   background-color: #000000;
 }
 progress::-webkit-progress-value {
-  background-color: #ffc107;
+  background-color: #ff0000;
 }
 h6 {
   text-transform: unset;

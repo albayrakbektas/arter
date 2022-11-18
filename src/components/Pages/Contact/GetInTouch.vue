@@ -116,7 +116,7 @@ i {
   transition: 0.4s ease-in-out;
 }
 .router-button {
-  background-color: #ffc107;
+  background-color: #ff0000;
   height: 45px;
   padding: 0 35px;
   font-weight: 600;
@@ -134,7 +134,7 @@ i {
   }
 }
 .label-yellow-bg {
-  background-color: #ffc107;
+  background-color: #ff0000;
   i {
     color: #20202a;
   }

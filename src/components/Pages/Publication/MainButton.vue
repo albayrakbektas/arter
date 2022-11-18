@@ -16,7 +16,8 @@ export default {
 
 <style lang="scss" scoped>
 .router-button {
-  background-color: #ffc107;
+  background-color: #ff0000;
+  filter: brightness(80%);
   padding: 5px 35px;
   color: #20202a;
   font-size: 11px;
@@ -28,6 +29,7 @@ export default {
   position: relative;
   &:hover {
     transform: translateY(-2px);
+    filter: brightness(100%);
   }
 }
 @media (min-width: 900px) {

@@ -16,7 +16,7 @@
       <img
         v-if="card.isImg"
         class="profile-photo"
-        src="../../assets/img/face-2.png"
+        src="../../assets/img/bektasalbayrak.jpg"
         alt="profile photo"
       />
     </div>
@@ -79,7 +79,7 @@ h1 {
   width: 100%;
 }
 .router-button {
-  background-color: #ffc107;
+  background-color: #ff0000;
   height: 45px;
   padding: 0 35px;
   font-weight: 600;

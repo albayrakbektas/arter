@@ -80,7 +80,7 @@ textarea {
   box-sizing: border-box;
 }
 .label-yellow-bg {
-  background-color: #ffc107 !important;
+  background-color: #ff0000 !important;
   i {
     color: #20202a !important;
   }

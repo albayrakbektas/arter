@@ -1,7 +1,7 @@
 <template>
   <div class="profile-avatar-container">
     <router-link to="#.">
-      <img src="../../assets/img/face-1.jpeg" alt="profile picture" />
+      <img src="../../assets/img/bektasalbayrak.jpg" alt="profile picture" />
       <i class="fas fa-expand"></i>
     </router-link>
     <div class="white-light"></div>
@@ -33,7 +33,7 @@ export default {
   right: 3.5px;
   bottom: 3.5px;
   z-index: 999;
-  background-color: #ffc107;
+  background-color: #ff0000;
   height: 15px;
   width: 15px;
   border-radius: 50%;

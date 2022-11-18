@@ -5,7 +5,7 @@
       ref="typewrite"
       class="typewrite"
       data-period="2000"
-      data-type='[ "web interfaces.", "ios and android applications.", "design mocups.", "automation tools." ]'
+      data-type='[ "web interfaces.", "android applications.", "test automation." ]'
     >
       <span ref="wrap" class="wrap"></span> </span
     >&lt;/<i>code</i>&gt;
@@ -22,9 +22,8 @@ export default {
       isDeleting: false,
       slideContentList: [
         "web interfaces.",
-        "ios and android applications.",
-        "design mocups.",
-        "automation tools.",
+        "android applications.",
+        "test automation.",
       ],
     };
   },
@@ -78,7 +77,7 @@ export default {
   text-align: left;
 }
 i {
-  color: #ffc107;
+  color: #ff0000;
   font-weight: 300;
 }
 .wrap {

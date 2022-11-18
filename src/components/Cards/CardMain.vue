@@ -10,14 +10,15 @@
       </div>
     </div>
     <p>{{ card.content }}</p>
-    <router-link
+    <a
       v-if="!card.emptyRoute"
       @click.native="setGridLayout(card)"
-      :to="card.href"
+      :href="card.href"
+      :target="card.isBlank ? '_blank' : null"
     >
       {{ card.buttonContent || "order now" }}
       <i class="fa-solid fa-chevron-right"></i>
-    </router-link>
+    </a>
   </div>
 </template>
 
@@ -86,7 +87,12 @@ a {
   letter-spacing: 1.5px;
   font-weight: 600;
   text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
   &:hover {
+    filter: brightness(100%);
+    i {
+      filter: brightness(100%);
+    }
     i.fa-chevron-right {
       transform: translateX(4px);
     }
@@ -94,7 +100,8 @@ a {
 }
 a,
 i {
-  color: #ffc107;
+  color: #ff0000;
+  filter: brightness(80%);
   transition: 400ms ease-in-out;
 }
 </style>

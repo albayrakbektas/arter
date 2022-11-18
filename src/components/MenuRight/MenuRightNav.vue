@@ -66,26 +66,6 @@ export default {
           href: "contact",
         },
         {
-          textContent: "blog",
-          href: "blog",
-          subItems: [
-            {
-              textContent: "2 column",
-              href: "blog",
-              layoutGrid: "two-column-grid",
-            },
-            {
-              textContent: "3 Column",
-              href: "blog",
-              layoutGrid: "three-column-grid",
-            },
-            {
-              textContent: "publication",
-              href: "publication",
-            },
-          ],
-        },
-        {
           textContent: "onepage",
           href: "onepage",
         },

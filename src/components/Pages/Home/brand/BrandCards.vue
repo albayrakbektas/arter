@@ -13,7 +13,7 @@ export default {
     return {
       brandList: [
         {
-          src: require("../../../../assets/img/home/brand/1.png"),
+          src: require("../../../../assets/img/signess.jpeg"),
           alt: "brand logo",
         },
         {
