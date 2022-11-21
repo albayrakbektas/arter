@@ -2,8 +2,8 @@
   <div class="row">
     <h4>Project Details</h4>
     <div class="row-grid">
-      <CardMain :card="detailedProject.card" />
-      <TableCard :table-list="detailedProject.tableList" />
+      <CardMain :card="$store.state.detailedProject.card" />
+      <TableCard :table-list="$store.state.detailedProject.tableList" />
     </div>
   </div>
 </template>
@@ -14,40 +14,11 @@ import TableCard from "@/components/Tables/TableCard";
 export default {
   name: "ProjectDetails",
   components: { TableCard, CardMain },
+  props: {
+    detailedProject: Object,
+  },
   data() {
-    return {
-      detailedProject: {
-        card: {
-          title: "Description",
-          content:
-            "Perferendis modi tempora, minus facere! Animi ipsam explicabo beatae soluta qui repellat minus perspiciatis placeat doloribus praesentium laborum debitis error sed ex nisi, ipsum ad obcaecati assumenda ut recusandae. Vero, voluptate, magni unde accusantium vel ducimus expedita!",
-          buttonContent: "read more",
-          href: "#",
-        },
-        tableList: [
-          {
-            key: "Order Date:",
-            value: "24.12.2019",
-          },
-          {
-            key: "Final Date:",
-            value: "12.03.2020",
-          },
-          {
-            key: "Status",
-            value: "Completed",
-          },
-          {
-            key: "Client",
-            value: "Envato Market",
-          },
-          {
-            key: "Location",
-            value: "Ukraine, Lviv",
-          },
-        ],
-      },
-    };
+    return {};
   },
 };
 </script>

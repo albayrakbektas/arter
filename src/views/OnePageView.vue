@@ -28,9 +28,6 @@ export default {
     PortfolioRouters,
     PortfolioTwoColumn,
   },
-  created() {
-    this.$store.state.layoutGrid = "three-column-masonry";
-  },
   mounted() {
     this.$store.state.isOnePage = true;
   },

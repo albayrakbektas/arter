@@ -79,7 +79,7 @@ h1 {
   width: 100%;
 }
 .router-button {
-  background-color: #ff0000;
+  background-color: #ffc107;
   height: 45px;
   padding: 0 35px;
   font-weight: 600;

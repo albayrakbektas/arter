@@ -62,6 +62,6 @@ p {
   color: #8c8c8e;
 }
 progress {
-  accent-color: #ff0000;
+  accent-color: #ffc107;
 }
 </style>

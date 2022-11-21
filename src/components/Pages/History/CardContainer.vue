@@ -54,7 +54,7 @@ h4 {
       animation: ani 2s ease-in-out infinite;
     }
     .yellow-light {
-      border: solid 3px #ff0000;
+      border: solid 3px #ffc107;
       transition: all 0.6s ease-in-out;
     }
   }
@@ -98,7 +98,7 @@ h4 {
   height: 15px;
   width: 15px;
   background-color: #1e1e28;
-  border: solid 3px #ff0000;
+  border: solid 3px #ffc107;
 }
 .card-container {
   margin-right: 30px;

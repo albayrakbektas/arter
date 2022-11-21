@@ -76,10 +76,8 @@ export default {
       "translate3d(0px, 0px, 0px)";
     this.percentAnimate(0, Number(this.languageCircleList[0].percent), 2000, 1);
     this.percentAnimate(0, Number(this.languageCircleList[1].percent), 2000, 2);
-    this.percentAnimate(0, Number(this.languageCircleList[2].percent), 2000, 3);
   },
   methods: {
-    downloadPdf() {},
     percentAnimate(start, end, duration, n) {
       if (start === end) {
         return;
@@ -94,9 +92,9 @@ export default {
           `div.language-circle-container > div:nth-child(${n}) > div > div.progress-spinner`
         );
         spinner.style.background =
-          "conic-gradient(rgb(255, 0, 0) " +
+          "conic-gradient(rgb(255, 193, 7) " +
           0 +
-          "deg,rgb(255, 0, 0)" +
+          "deg,rgb(255, 193, 7)" +
           current * 3.6 +
           "deg,rgb(0, 0, 0) " +
           current * 3.6 +
@@ -126,9 +124,9 @@ export default {
 .language-circle-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 30px 0 15px;
 }
 .download-pdf {
@@ -140,7 +138,8 @@ export default {
   justify-content: start;
   padding: 15px 0;
   font-size: 10px;
-  color: #8c8c8e;
+  color: #ffc107;
+  filter: brightness(80%);
   line-height: 1.5;
   transition: 0.4s ease-in-out;
   font-weight: 600;
@@ -149,7 +148,8 @@ export default {
 .pdf-container {
   &:hover {
     .download-pdf {
-      color: #fafafc;
+      color: #ffc107;
+      filter: brightness(100%);
     }
   }
 }

@@ -10,15 +10,27 @@
       </div>
     </div>
     <p>{{ card.content }}</p>
-    <a
-      v-if="!card.emptyRoute"
-      @click.native="setGridLayout(card)"
-      :href="card.href"
-      :target="card.isBlank ? '_blank' : null"
-    >
-      {{ card.buttonContent || "order now" }}
-      <i class="fa-solid fa-chevron-right"></i>
-    </a>
+    <div @click="setDetailedProject(card)">
+      <router-link
+        v-if="!card.emptyRoute"
+        :to="{
+          name: 'project',
+          params: { project: card.title.toLowerCase(), detailedProject: card },
+        }"
+        :target="card.isBlank ? '_blank' : '_self'"
+      >
+        {{ card.buttonContent || "order now" }}
+        <i class="fa-solid fa-chevron-right"></i>
+      </router-link>
+    </div>
+    <!--    <div-->
+    <!--      class="div-router"-->
+    <!--      v-if="!card.emptyRoute"-->
+    <!--      @click="setDetailedProject(card.href, card.isBlank, card)"-->
+    <!--    >-->
+    <!--      {{ card.buttonContent || "order now" }}-->
+    <!--      <i class="fa-solid fa-chevron-right"></i>-->
+    <!--    </div>-->
   </div>
 </template>
 
@@ -29,18 +41,43 @@ export default {
     card: Object,
   },
   methods: {
-    setGridLayout(item) {
-      console.log(item.href);
-      if (item.href === "singleproject") {
-        this.$store.state.layoutGrid = "single-project";
-      }
-      this.$router.push("/singleproject");
+    setDetailedProject(card) {
+      console.log(card);
+      this.$store.state.detailedProject = card;
+      // let routeData = this.$router.resolve({
+      //   name: "project",
+      //   params: { project: href },
+      // });
+      // window.open(routeData.href, isBlank ? "_blank" : "_self");
     },
+    // setGridLayout(item) {
+    //   console.log(item.href);
+    //   if (item.href === "singleproject") {
+    //     this.$store.state.layoutGrid = "single-project";
+    //   }
+    //   this.$router.push("/singleproject");
+    // },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.div-router {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+  color: #ffc107;
+  filter: brightness(80%);
+  cursor: pointer;
+  &:hover {
+    filter: brightness(100%);
+    i {
+      margin-left: 5px;
+    }
+  }
+}
 .card-container {
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
   padding: 30px;
@@ -100,7 +137,7 @@ a {
 }
 a,
 i {
-  color: #ff0000;
+  color: #ffc107;
   filter: brightness(80%);
   transition: 400ms ease-in-out;
 }

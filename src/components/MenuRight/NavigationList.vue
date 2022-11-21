@@ -4,8 +4,10 @@
     class="menu-item"
     :class="{ 'menu-item-dropdown': item.subItems }"
   >
-    <router-link
-      :to="item.href"
+    <tag
+      class="dynamic-anchor"
+      :is="item.subItems ? 'div' : 'router-link'"
+      :to="{ path: item.href }"
       :target="item.href === 'onepage' ? '_blank' : null"
     >
       <span ref="route-name">
@@ -14,7 +16,7 @@
       <span v-if="item.subItems" class="material-symbols-outlined">
         keyboard_arrow_right
       </span>
-    </router-link>
+    </tag>
     <ul
       class="menu-right-nav-container menu-right-subNav-container"
       :class="{ 'active-menu-right-subNav-container': isSubItem }"
@@ -24,9 +26,10 @@
         class="menu-item menu-sub-item"
         :class="{ 'menu-sub-item-visible': isSubItem }"
         :key="subIndex"
-        @click="changeGridLayout(subItem)"
       >
-        <router-link :to="subItem.href">
+        <router-link
+          :to="{ path: subItem.href, detailedProject: subItem.detailedProject }"
+        >
           <span class="sub-content">
             {{ subItem.textContent }}
           </span>
@@ -84,31 +87,6 @@ export default {
         this.$store.state.isRightMenuNotActive = true;
       }
     },
-    changeGridLayout(item) {
-      this.$store.state.layoutGrid = item.layoutGrid;
-      this.$store.state.isRightMenuActive = false;
-      this.$store.state.isRightMenuNotActive = true;
-      if (item.layoutGrid === "three-column-masonry") {
-        this.setLayout();
-      }
-    },
-    setLayout() {
-      const container = document.querySelector(".three-column-masonry");
-      for (let i = 0; i < container.length; i++) {
-        if (i % 3 === 0) {
-          container[i].style.top = `${this.firstColumnTop}px`;
-          this.firstColumnTop += container[i].clientHeight;
-        } else if (i % 3 === 1) {
-          container[i].style.left = "30vw";
-          container[i].style.top = `${this.secondColumnTop}px`;
-          this.secondColumnTop += container[i].clientHeight;
-        } else {
-          container[i].style.left = "60vw";
-          container[i].style.top = `${this.thirdColumnTop}px`;
-          this.thirdColumnTop += container[i].clientHeight;
-        }
-      }
-    },
   },
 };
 </script>
@@ -154,12 +132,14 @@ li {
 .active-menu-right-subNav-container {
   max-height: 500px;
 }
-a {
+a,
+.dynamic-anchor {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 7px 30px;
   line-height: 1.2;
+  cursor: pointer;
 }
 .menu-item {
   font-size: 11px;

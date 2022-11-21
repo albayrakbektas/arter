@@ -61,7 +61,7 @@ export default {
   align-items: center;
 }
 span {
-  color: #ff0000;
+  color: #ffc107;
   font-size: 22px;
   font-weight: 600;
 }

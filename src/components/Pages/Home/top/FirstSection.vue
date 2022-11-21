@@ -8,7 +8,7 @@
           Art Space!
         </h1>
         <SlideCode />
-        <router-link class="router-button" to="#">
+        <router-link class="router-button" to="/portfolio">
           <span>EXPLORE NOW</span>
         </router-link>
       </div>
@@ -56,11 +56,12 @@ h1 {
   );
 }
 .router-button {
-  background-color: #ff0000;
+  background-color: #ffc107;
   padding: 5px 35px;
   filter: brightness(80%);
   height: 45px;
-  color: #ffffff;
+  color: #2b2b35;
+  font-weight: 800;
   font-size: 11px;
   display: grid;
   align-items: center;

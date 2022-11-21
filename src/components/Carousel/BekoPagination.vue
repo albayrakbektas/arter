@@ -58,7 +58,7 @@ export default {
 }
 .beko-carousel-dot--active {
   width: 20px;
-  background-color: #ff0000;
+  background-color: #ffc107;
   opacity: 1;
 }
 button {

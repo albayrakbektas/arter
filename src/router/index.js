@@ -17,11 +17,11 @@ const routes = [
       import(/* webpackChunkName: "portfolio" */ "../views/PortfolioView.vue"),
   },
   {
-    path: "/singleproject",
-    name: "singleproject",
+    path: "/project/:project",
+    name: "project",
     component: () =>
       import(
-        /* webpackChunkName: "singleproject" */ "../views/SingleProject.vue"
+        /* webpackChunkName: "singleproject" */ "../views/ProjectView.vue"
       ),
   },
   {

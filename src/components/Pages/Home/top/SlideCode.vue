@@ -77,7 +77,7 @@ export default {
   text-align: left;
 }
 i {
-  color: #ff0000;
+  color: #ffc107;
   font-weight: 300;
 }
 .wrap {

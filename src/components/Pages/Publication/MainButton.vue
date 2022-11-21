@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .router-button {
-  background-color: #ff0000;
+  background-color: #ffc107;
   filter: brightness(80%);
   padding: 5px 35px;
   color: #20202a;

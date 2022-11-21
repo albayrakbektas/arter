@@ -1,21 +1,20 @@
 <template>
   <div class="navigation-footer">
-    <router-link @click.native="changeSinglePage" to="#" class="link-yellow">
+    <div @click="changeProject(-1)" class="link-yellow">
       <i class="fa-solid fa-chevron-left"></i>
       {{ card.prevLink }}
-    </router-link>
+    </div>
     <router-link
       v-if="$store.state.isDesktopView"
-      :to="card.allLink.href"
-      @click.native="setGrid"
+      to="/portfolio"
       class="all-pub-link"
     >
       {{ card.allLink.content }}
     </router-link>
-    <router-link @click.native="changeSinglePage" to="#" class="link-yellow">
+    <div @click="changeProject(1)" class="link-yellow">
       {{ card.nextLink }}
       <i class="fa-solid fa-chevron-right"></i>
-    </router-link>
+    </div>
   </div>
 </template>
 
@@ -26,16 +25,28 @@ export default {
     card: Object,
   },
   methods: {
-    changeSinglePage() {
-      console.log("s");
-      this.$store.state.layoutGrid === "single-project"
-        ? (this.$store.state.layoutGrid = "single-project-two")
-        : (this.$store.state.layoutGrid = "single-project");
-      document.querySelector(".publication-header").scrollIntoView();
+    currentProject(project) {
+      return project.id && project.id === this.$route.params.project;
     },
-    setGrid() {
-      this.$store.state.layoutGrid = "three-column-grid";
-      this.$router.push(this.$props.card.allLink.route);
+    changeProject(direction) {
+      let length = this.$store.state.portfolioCards.length;
+      let index =
+        this.$store.state.portfolioCards.findIndex(this.currentProject) +
+        direction;
+      if (index === -1) {
+        return;
+      } else if (index >= length) {
+        index = 0;
+      }
+      this.$store.state.detailedProject =
+        this.$store.state.portfolioCards[index];
+      this.$router.replace({
+        name: "project",
+        params: {
+          project: this.$store.state.detailedProject.title.toLowerCase(),
+        },
+      });
+      document.querySelector(".publication-header").scrollIntoView();
     },
   },
 };
@@ -74,7 +85,8 @@ export default {
     transition: 0.4s ease-in-out;
   }
   .link-yellow {
-    color: #ff0000;
+    color: #ffc107;
+    cursor: pointer;
   }
 }
 @media (min-width: 900px) {

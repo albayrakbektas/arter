@@ -223,7 +223,7 @@ export default {
 .current-page-text {
   transform: rotate(90deg);
   text-align: center;
-  color: #ff0000;
+  color: #ffc107;
   font-weight: 900;
   filter: brightness(80%);
   font-size: 11px;

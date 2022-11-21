@@ -33,7 +33,7 @@ export default {
   right: 3.5px;
   bottom: 3.5px;
   z-index: 999;
-  background-color: #ff0000;
+  background-color: #ffc107;
   height: 15px;
   width: 15px;
   border-radius: 50%;

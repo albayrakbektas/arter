@@ -6,11 +6,12 @@
           this.$store.state.layoutGrid === 'single-project-two' ||
           'single-project'
         "
-        :card="header"
+        :card="$store.state.detailedProject.header"
         class="pd header-width"
       />
       <CardImageSlider
-        :header="header"
+        :card-list="$store.state.detailedProject.images"
+        :header="$store.state.detailedProject.header"
         v-if="this.$store.state.layoutGrid === 'single-project'"
       />
       <PublicationFullImg
@@ -18,12 +19,10 @@
         class="full-img"
         :img="img"
       />
-      <ProjectDetails />
+      <ProjectDetails :detailed-project="$store.state.detailedProject" />
       <PortfolioResult
         v-if="this.$store.state.layoutGrid === 'single-project-two'"
       />
-      <RecommendationCards :header="headerTwo" />
-      <ExperienceCards class="mt" />
       <BgCard :button="button" :card="card" class="rel-row mt" />
       <FooterNavigation :card="footerCard" class="pd" />
     </div>
@@ -35,31 +34,49 @@ import LayoutPage from "@/components/Layouts/LayoutPage";
 import ProjectDetails from "@/components/Pages/SingleProject/ProjectDetails";
 import BgCard from "@/components/Cards/BgCard";
 import FooterNavigation from "@/components/Pages/Publication/FooterNavigation";
-import ExperienceCards from "@/components/Pages/Home/experience/ExperienceCards";
-import RecommendationCards from "@/components/Pages/Home/recommendation/RecommendationCards";
 import PublicationFullImg from "@/components/Pages/Publication/PublicationFullImg";
 import PublicationHeader from "@/components/Pages/Publication/PublicationHeader";
 import PortfolioResult from "@/components/Pages/SingleProject/PortfolioResult";
 import CardImageSlider from "@/components/Pages/SingleProject/CardImageSlider";
 export default {
-  name: "SingleProject",
+  name: "ProjectView",
   components: {
     CardImageSlider,
     PortfolioResult,
     PublicationHeader,
     PublicationFullImg,
-    RecommendationCards,
-    ExperienceCards,
     FooterNavigation,
     BgCard,
     ProjectDetails,
     LayoutPage,
   },
+  props: {
+    detailedProjects: Object,
+  },
   mounted() {
     this.$store.state.layoutGrid = "single-project";
+    this.$store.state.portfolioCards.forEach((e) => {
+      if (e.id && e.id === this.$route.params.project) {
+        this.$store.state.detailedProject = e;
+      }
+    });
+  },
+  watch: {
+    $route: {
+      handler: function (val) {
+        this.$store.state.isRightMenuActive = false;
+        this.$store.state.portfolioCards.forEach((e) => {
+          if (e.id && e.id === val.params.project) {
+            this.$store.state.detailedProject = e;
+          }
+        });
+      },
+      deep: true,
+    },
   },
   data() {
     return {
+      detailedProject: {},
       single: true,
       singleSecond: false,
       header: {
@@ -76,7 +93,7 @@ export default {
       },
       button: {
         content: "CONTACT ME",
-        href: "contact",
+        href: "/contact",
       },
       card: {
         h1Top: "Ready to order your project?",
@@ -87,7 +104,7 @@ export default {
         prevLink: "previous project",
         allLink: {
           content: "all projects",
-          href: "#",
+          href: "/portfolio",
           route: "portfolio",
         },
         nextLink: "next project",
@@ -98,6 +115,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.row {
+  justify-content: unset;
+}
 .rel-row {
   position: relative !important;
   h1 {

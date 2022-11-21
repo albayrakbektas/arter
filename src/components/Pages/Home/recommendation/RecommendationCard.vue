@@ -95,7 +95,7 @@ li {
   }
 }
 i {
-  color: #ff0000;
+  color: #ffc107;
 }
 .empty-star {
   color: rgba(43, 43, 53, 0.98);

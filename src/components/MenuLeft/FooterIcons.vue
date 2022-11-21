@@ -38,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 .social-media-icon-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
   align-content: center;
   height: 100%;
@@ -53,7 +53,7 @@ export default {
   }
 }
 i {
-  color: #ff0000;
+  color: #ffc107;
   transition: 0.4s ease-in-out;
   &:hover {
     color: #fafafc;

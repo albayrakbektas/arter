@@ -10,7 +10,6 @@
         :data-filter="item.dataFilter"
         to="#"
         :key="index"
-        @click.native="filterCards"
       >
         {{ item.content }}
       </router-link>

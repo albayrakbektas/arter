@@ -1,27 +1,8 @@
 <template>
-  <div
-    class="card-image-container"
-    :class="[
-      $store.state.layoutGrid === 'two-column-masonry' ||
-      $store.state.layoutGrid === 'three-column-masonry'
-        ? card.size
-        : '',
-      routeName === 'blog' || card.isBlog ? 'blog-card-position' : '',
-      card.isSlide ? 'mb-zero' : '',
-    ]"
-  >
-    <router-link
-      :class="[
-        $store.state.layoutGrid === 'two-column-masonry' ||
-        $store.state.layoutGrid === 'three-column-masonry'
-          ? card.size
-          : '',
-      ]"
-      class="card-image-href"
-      :to="card.imageHref || '#'"
-    >
+  <div class="card-image-container" :class="[card.isSlide ? 'mb-zero' : '']">
+    <router-link class="card-image-href" :to="card.imageHref || '#'">
       <img class="card-image" :src="card.imageSrc" :alt="card.imageAlt" />
-      <i v-if="routeName !== 'blog'" class="fas fa-expand"></i>
+      <i class="fas fa-expand"></i>
     </router-link>
     <div v-if="card.isSlide === 1 || !card.isSlide" class="card-main-abs">
       <CardMain :card="card" />
@@ -52,8 +33,8 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: fill;
+  object-fit: fill;
   -o-object-position: center;
   object-position: center;
   -webkit-filter: brightness(85%) blur(0);

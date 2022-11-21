@@ -281,7 +281,6 @@ export default {
       // console.log(matches[0], matches[0][1]);
       // breakpoints.forEach((breakpoint) => console.log(breakpoint[0]));
       const match = matches[0] && matches[0][1];
-      console.log(match, this.perPage);
       return match || this.perPage;
     },
     canAdvanceForward() {

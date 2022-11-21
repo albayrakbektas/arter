@@ -1,14 +1,7 @@
 <template>
-  <div
-    ref="row"
-    class="row"
-    :class="[
-      $store.state.layoutGrid || 'two-column-grid',
-      $route.name === 'onepage' ? 'three-column-masonry' : '',
-    ]"
-  >
+  <div ref="row" class="row">
     <CardImage
-      v-for="(item, index) of $store.state.showingPortfolioCards"
+      v-for="(item, index) of $store.state.portfolioCards"
       :card="item"
       :key="index"
       ref="card"
@@ -32,6 +25,7 @@ export default {
 <style lang="scss" scoped>
 .row {
   grid-auto-rows: auto;
+  gap: 15px;
 }
 h4 {
   font-size: 17px;
@@ -40,8 +34,8 @@ h4 {
 }
 @media (min-width: 900px) {
   .row {
-    display: block;
-    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
   h4 {
     grid-area: 1 / span 3;
@@ -73,49 +67,5 @@ h4 {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 15px;
   }
-  .two-column-masonry {
-    -moz-column-count: 2;
-    -moz-column-gap: 3%;
-    -moz-column-width: 50%;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 2%;
-    -webkit-column-width: 50%;
-    column-count: 2;
-    column-gap: 3%;
-    column-width: 50%;
-    direction: ltr;
-  }
-  .three-column-masonry {
-    -moz-column-count: 3;
-    -moz-column-gap: 3%;
-    -moz-column-width: 30%;
-    -webkit-column-count: 3;
-    -webkit-column-gap: 3%;
-    -webkit-column-width: 30%;
-    column-count: 3;
-    column-gap: 3%;
-    column-width: 30%;
-  }
 }
-//.masonry-with-columns {
-//  display: grid;
-//  grid-template-columns: repeat(2, 1fr);
-//  .card-image-container {
-//    flex: auto 0;
-//    text-align: center;
-//    font-family: system-ui;
-//    font-weight: 900;
-//    font-size: 2rem;
-//  }
-//  @for $i from 1 through 8 {
-//    div:nth-child(#{$i}) {
-//      $h: (random(100) + 100) + px;
-//      height: $h;
-//    }
-//    div:nth-child(#{$i}) {
-//      $h: (random(300) + 100) + px;
-//      height: $h;
-//    }
-//  }
-//}
 </style>

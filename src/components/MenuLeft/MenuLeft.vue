@@ -93,11 +93,11 @@ export default {
   }
   h5 {
     font-size: 15px;
-    color: #ff0000;
+    color: #ffc107;
     filter: brightness(80%);
     transition: 0.4s ease-in-out;
     &:hover {
-      color: #ff0000;
+      color: #ffc107;
       filter: brightness(100%);
     }
   }

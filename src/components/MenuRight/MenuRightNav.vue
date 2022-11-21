@@ -23,51 +23,40 @@ export default {
         },
         {
           textContent: "portfolio",
-          href: "#.",
+          href: "/",
           subItems: [
             {
-              textContent: "2 Column",
-              href: "portfolio",
-              layoutGrid: "two-column-grid",
+              textContent: "All",
+              href: "/portfolio",
             },
             {
-              textContent: "3 Column",
-              href: "portfolio",
-              layoutGrid: "three-column-grid",
+              textContent: "Arter",
+              href: "/project/arter",
+              detailedProject: "arter",
             },
             {
-              textContent: "2 Column Masonry",
-              href: "portfolio",
-              layoutGrid: "two-column-masonry",
+              textContent: "CV-maker",
+              href: "/project/cv-maker",
+              detailedProject: "cv-maker",
             },
             {
-              textContent: "3 Column masonry",
-              href: "portfolio",
-              layoutGrid: "three-column-masonry",
-            },
-            {
-              textContent: "single project",
-              href: "singleproject",
-              layoutGrid: "single-project",
-            },
-            {
-              textContent: "single project 2",
-              href: "singleproject",
-              layoutGrid: "single-project-two",
+              textContent: "Ramsey",
+              href: "/project/ramsey",
+              detailedProject: "ramsey",
             },
           ],
         },
         {
           textContent: "history",
-          href: "history",
+          href: "/history",
         },
         {
           textContent: "contact",
-          href: "contact",
+          href: "/contact",
         },
         {
           textContent: "onepage",
-          href: "onepage",
+          href: "/onepage",
         },
       ],
     };

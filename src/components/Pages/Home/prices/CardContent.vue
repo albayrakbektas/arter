@@ -30,7 +30,7 @@ li {
   font-weight: 300;
 }
 i {
-  color: #ff0000;
+  color: #ffc107;
   margin-right: 5px;
   font-weight: 900;
   font-size: 9px;
