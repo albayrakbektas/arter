@@ -43,7 +43,7 @@ export default {
 }
 h4 {
   font-size: 17px;
-  margin: 30px 0;
+  margin: 35px 0 15px 0;
   text-align: center;
 }
 @media (min-width: 900px) {

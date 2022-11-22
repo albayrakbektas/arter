@@ -1,5 +1,6 @@
 <template>
   <div ref="row" class="row">
+    <h4>My Projects</h4>
     <CardImage
       v-for="(item, index) of $store.state.portfolioCards"
       :card="item"
@@ -25,17 +26,17 @@ export default {
 <style lang="scss" scoped>
 .row {
   grid-auto-rows: auto;
-  gap: 15px;
+  column-gap: 15px;
 }
 h4 {
   font-size: 17px;
-  margin: 0 0 30px 0;
+  margin: 5px 0 15px 0;
   text-align: center;
 }
 @media (min-width: 900px) {
   .row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    column-gap: 30px;
   }
   h4 {
     grid-area: 1 / span 3;

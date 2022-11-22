@@ -356,6 +356,158 @@ export default new Vuex.Store({
         title: "Ramsey",
         id: "ramsey",
       },
+      {
+        header: {
+          title: "Photographer",
+          content: "Web Development",
+        },
+        card: {
+          title: "Description",
+          content: "photographer content",
+          buttonContent: "Button Content",
+          href: "#",
+        },
+        tableList: [
+          {
+            key: "Order Date:",
+            value: "24.12.2222",
+          },
+          {
+            key: "Final Date:",
+            value: "12.03.2222",
+          },
+          {
+            key: "Status",
+            value: "Completed",
+          },
+          {
+            key: "Client",
+            value: "Envato 2222",
+          },
+          {
+            key: "Location",
+            value: "Ukraine, 2222",
+          },
+        ],
+        images: [
+          {
+            imageSrc: require("../assets/photopgrapher/home.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+          {
+            imageSrc: require("../assets/photopgrapher/home-2.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+          {
+            imageSrc: require("../assets/photopgrapher/full-screen.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+          {
+            imageSrc: require("../assets/photopgrapher/albums.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+          {
+            imageSrc: require("../assets/photopgrapher/home.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+        ],
+        imageSrc: require("../assets/photopgrapher/home.png"),
+        imageAlt: "portfolio 1",
+        imagehref: "photographer",
+        content: "Photographer Design",
+        href: "/project/photographer",
+        size: "short",
+        dataFilter: ".webTemplates",
+        buttonContent: "Read more",
+        title: "Photographer",
+        id: "photographer",
+      },
+      {
+        header: {
+          title: "Todo App",
+          content: "Web Development",
+        },
+        card: {
+          title: "Description",
+          content: "todo content",
+          buttonContent: "Button Content",
+          href: "#",
+        },
+        tableList: [
+          {
+            key: "Order Date:",
+            value: "24.12.2222",
+          },
+          {
+            key: "Final Date:",
+            value: "12.03.2222",
+          },
+          {
+            key: "Status",
+            value: "Completed",
+          },
+          {
+            key: "Client",
+            value: "Envato 2222",
+          },
+          {
+            key: "Location",
+            value: "Ukraine, 2222",
+          },
+        ],
+        images: [
+          {
+            imageSrc: require("../assets/photopgrapher/home.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+          {
+            imageSrc: require("../assets/photopgrapher/home-2.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+          {
+            imageSrc: require("../assets/todo/new-task.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+          {
+            imageSrc: require("../assets/todo/menu.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+          {
+            imageSrc: require("../assets/todo/home-mobile.png"),
+            imageAlt: "",
+            isBlog: true,
+            isSlide: true,
+          },
+        ],
+        imageSrc: require("../assets/todo/home.png"),
+        imageAlt: "portfolio 1",
+        imagehref: "todo",
+        content: "Todo Web App",
+        href: "/project/todo",
+        size: "short",
+        dataFilter: ".webTemplates",
+        buttonContent: "Read more",
+        title: "Todo",
+        id: "todo",
+      },
     ],
     blogCardList: [
       {

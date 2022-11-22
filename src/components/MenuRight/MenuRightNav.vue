@@ -44,6 +44,11 @@ export default {
               href: "/project/ramsey",
               detailedProject: "ramsey",
             },
+            {
+              textContent: "Photographer",
+              href: "/project/photographer",
+              detailedProject: "Photographer",
+            },
           ],
         },
         {

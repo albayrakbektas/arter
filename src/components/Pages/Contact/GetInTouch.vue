@@ -2,13 +2,37 @@
   <div class="row">
     <h4>Get in touch</h4>
     <div class="form-card">
-      <form @submit="sendMessage">
+      <form
+        action="https://formsubmit.co/albayrakbektas44@gmail.com"
+        method="POST"
+      >
         <FormField
           v-for="(item, index) of formFieldList"
           :form-field="item"
           v-model="item.value"
           :key="index"
         />
+        <input
+          type="hidden"
+          name="_next"
+          value="http://192.168.1.171:8080/contact"
+        />
+        <input
+          type="hidden"
+          name="_subject"
+          value="New submission from bektasalbayrak.com!"
+        />
+
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_cc" value="bekomessii19@gmail.com" />
+        <input type="text" name="_honey" style="display: none" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input
+          type="hidden"
+          name="_autoresponse"
+          value="Merhaba. Mesajini aldim raadda kal keke"
+        />
+
         <div class="form-button-field">
           <button type="submit" class="router-button">
             <span>SEND MESSAGE</span>

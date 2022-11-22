@@ -27,6 +27,7 @@ export default {
           isAfter: false,
           isBlank: true,
           buttonContent: "University Website",
+          outOfProject: true,
         },
         {
           title: "Anadolu University",
@@ -37,6 +38,7 @@ export default {
           isBlank: true,
           isAfter: true,
           buttonContent: "University Website",
+          outOfProject: true,
         },
         {
           title: "Icel Anadolu High School",
@@ -47,6 +49,7 @@ export default {
           isBlank: true,
           isAfter: true,
           buttonContent: "University Website",
+          outOfProject: true,
         },
       ],
       secondList: [
@@ -60,6 +63,7 @@ export default {
           emptyRoute: true,
           isAfter: true,
           buttonContent: "",
+          outOfProject: true,
         },
         {
           title: "base64.ai",
@@ -70,6 +74,7 @@ export default {
           isBlank: true,
           isAfter: true,
           buttonContent: "Employer's Website",
+          outOfProject: true,
         },
         {
           title: "DiaTic",
@@ -80,6 +85,7 @@ export default {
           emptyRoute: true,
           isAfter: true,
           buttonContent: "recommendation",
+          outOfProject: true,
         },
         {
           title: "CV Maker",
@@ -90,6 +96,7 @@ export default {
           isBlank: true,
           isAfter: true,
           buttonContent: "Go to Website",
+          outOfProject: true,
         },
       ],
     };

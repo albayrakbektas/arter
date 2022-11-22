@@ -12,9 +12,9 @@
     <p>{{ card.content }}</p>
     <div @click="setDetailedProject(card)">
       <router-link
-        v-if="!card.emptyRoute"
+        v-if="!card.emptyRoute && !card.outOfProject"
         :to="{
-          name: 'project',
+          path: card.href,
           params: { project: card.title.toLowerCase(), detailedProject: card },
         }"
         :target="card.isBlank ? '_blank' : '_self'"
@@ -22,6 +22,14 @@
         {{ card.buttonContent || "order now" }}
         <i class="fa-solid fa-chevron-right"></i>
       </router-link>
+      <a
+        v-if="card.outOfProject && !card.emptyRoute"
+        :href="card.href"
+        :target="card.isBlank ? '_blank' : '_self'"
+      >
+        {{ card.buttonContent || "order now" }}
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
     </div>
     <!--    <div-->
     <!--      class="div-router"-->
