@@ -1,6 +1,6 @@
 <template>
   <div class="card-image-container" :class="[card.isSlide ? 'mb-zero' : '']">
-    <div @click="zoomImage(card)" class="card-image-href">
+    <div class="card-image-href">
       <img class="card-image" :src="card.imageSrc" :alt="card.imageAlt" />
       <i class="fas fa-expand"></i>
     </div>
