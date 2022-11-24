@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     loadingPage: true,
     isFullScreen: false,
+    fullScreenImages: [],
     isDesktopView: window.innerWidth >= 900,
     layoutGrid: "",
     singlePortfolioPage: true,
@@ -60,8 +61,8 @@ export default new Vuex.Store({
       card: {
         title: "Description",
         content: "Content",
-        buttonContent: "Button Content",
-        href: "#",
+        buttonContent: "Go to Website",
+        href: "https://www.arter.bektasalbayrak.com",
       },
       tableList: [
         {
@@ -136,8 +137,10 @@ export default new Vuex.Store({
         card: {
           title: "Description",
           content: "Content",
-          buttonContent: "Button Content",
-          href: "#",
+          buttonContent: "Go to Website",
+          outOfProject: true,
+          isBlank: true,
+          href: "https://arter.bektasalbayrak.com",
         },
         tableList: [
           {
@@ -212,8 +215,10 @@ export default new Vuex.Store({
         card: {
           title: "Description",
           content: "Cv-maker content",
-          buttonContent: "Button Content",
-          href: "#",
+          buttonContent: "Go to Website",
+          outOfProject: true,
+          isBlank: true,
+          href: "https://cv-maker.bektasalbayrak.com",
         },
         tableList: [
           {
@@ -288,8 +293,10 @@ export default new Vuex.Store({
         card: {
           title: "Description",
           content: "Ramsey Design content",
-          buttonContent: "Button Content",
-          href: "#",
+          buttonContent: "Go to Website",
+          outOfProject: true,
+          isBlank: true,
+          href: "https://ramsey.bektasalbayrak.com",
         },
         tableList: [
           {
@@ -364,8 +371,10 @@ export default new Vuex.Store({
         card: {
           title: "Description",
           content: "photographer content",
-          buttonContent: "Button Content",
-          href: "#",
+          buttonContent: "Go to Website",
+          outOfProject: true,
+          isBlank: true,
+          href: "https://photographer.bektasalbayrak.com",
         },
         tableList: [
           {
@@ -440,8 +449,10 @@ export default new Vuex.Store({
         card: {
           title: "Description",
           content: "todo content",
-          buttonContent: "Button Content",
-          href: "#",
+          buttonContent: "Go to Website",
+          outOfProject: true,
+          isBlank: true,
+          href: "https://todo.bektasalbayrak.com",
         },
         tableList: [
           {
@@ -467,13 +478,13 @@ export default new Vuex.Store({
         ],
         images: [
           {
-            imageSrc: require("../assets/photopgrapher/home.png"),
+            imageSrc: require("../assets/todo/home.png"),
             imageAlt: "",
             isBlog: true,
             isSlide: true,
           },
           {
-            imageSrc: require("../assets/photopgrapher/home-2.png"),
+            imageSrc: require("../assets/todo/home-2.png"),
             imageAlt: "",
             isBlog: true,
             isSlide: true,

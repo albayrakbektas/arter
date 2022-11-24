@@ -1,9 +1,9 @@
 <template>
   <div class="card-image-container" :class="[card.isSlide ? 'mb-zero' : '']">
-    <router-link class="card-image-href" :to="card.imageHref || '#'">
+    <div @click="zoomImage(card)" class="card-image-href">
       <img class="card-image" :src="card.imageSrc" :alt="card.imageAlt" />
       <i class="fas fa-expand"></i>
-    </router-link>
+    </div>
     <div v-if="card.isSlide === 1 || !card.isSlide" class="card-main-abs">
       <CardMain :card="card" />
     </div>
@@ -22,6 +22,12 @@ export default {
   },
   props: {
     card: Object,
+  },
+  methods: {
+    zoomImage(card) {
+      this.$store.state.fullScreenImages = card.images;
+      this.$store.state.isFullScreen = true;
+    },
   },
 };
 </script>
@@ -42,7 +48,8 @@ export default {
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
 }
-a {
+.card-image-href {
+  cursor: pointer;
   display: block;
   width: 100%;
   outline: inherit;

@@ -1,12 +1,14 @@
 <template>
-  <div ref="row" class="row">
-    <h4>My Projects</h4>
-    <CardImage
-      v-for="(item, index) of $store.state.portfolioCards"
-      :card="item"
-      :key="index"
-      ref="card"
-    />
+  <div>
+    <router-link to="/portfolio">My Projects</router-link>
+    <div ref="row" class="row">
+      <CardImage
+        v-for="(item, index) of $store.state.portfolioCards"
+        :card="item"
+        :key="index"
+        ref="card"
+      />
+    </div>
   </div>
 </template>
 
@@ -27,18 +29,20 @@ export default {
 .row {
   grid-auto-rows: auto;
   column-gap: 15px;
+  margin-top: 15px;
 }
-h4 {
+a {
   font-size: 17px;
-  margin: 5px 0 15px 0;
+  margin-left: 15px;
   text-align: center;
+  color: #ffc107;
 }
 @media (min-width: 900px) {
   .row {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 30px;
   }
-  h4 {
+  a {
     grid-area: 1 / span 3;
     text-align: left;
   }

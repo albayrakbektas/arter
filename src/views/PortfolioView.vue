@@ -1,6 +1,7 @@
 <template>
   <LayoutPage>
     <PortfolioRouters />
+    <h4>My Projects</h4>
     <PortfolioG />
   </LayoutPage>
 </template>
@@ -15,4 +16,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h4 {
+  margin: 0 0 15px 30px;
+}
+</style>
