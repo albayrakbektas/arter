@@ -1,9 +1,9 @@
 <template>
   <div class="profile-avatar-container">
-    <router-link to="#.">
+    <div>
       <img src="../../assets/img/bektasalbayrak.jpg" alt="profile picture" />
-      <i class="fas fa-expand"></i>
-    </router-link>
+      <!--      <i class="fas fa-expand"></i>-->
+    </div>
     <div class="white-light"></div>
     <div class="yellow-light"></div>
   </div>

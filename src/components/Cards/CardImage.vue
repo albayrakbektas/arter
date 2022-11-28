@@ -26,6 +26,7 @@ export default {
   methods: {
     zoomImage(card) {
       this.$store.state.fullScreenImages = card.images;
+      this.$store.state.detailedProject = card;
       this.$store.state.isFullScreen = true;
     },
   },

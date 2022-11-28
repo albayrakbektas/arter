@@ -8,7 +8,9 @@
         :alt="currentImage.imageAlt"
         :key="currentImage.imageSrc"
         class="image"
+        :class="isZoom && $store.state.isDesktopView ? 'zoomedIn' : ''"
         ref="image"
+        @click="changeZoom"
       />
       <img
         :src="currentImage.imageSrc"
@@ -18,6 +20,12 @@
         ref="image"
       />
       <i @click="navigateImages(1)" class="fa-solid fa-chevron-right"></i>
+      <div class="website-router">
+        <a :href="$store.state.detailedProject.card.href" target="_blank"
+          >Go to website</a
+        >
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -30,10 +38,11 @@ export default {
     return {
       index: 0,
       currentImage: null,
+      isZoom: false,
     };
   },
   mounted() {
-    console.log(this.getFullScreenImages);
+    console.log(this.$store.state.detailedProject);
     this.currentImage = this.getFullScreenImages[this.index];
   },
   computed: {
@@ -121,20 +130,27 @@ img {
   left: 50%;
   top: 50%;
   translate: -50% -50%;
-  scale: 1;
+  scale: 1.5;
   transition: 0.6s ease-in-out;
   max-height: 50vh;
   max-width: 50vw;
   border: 1px solid rgba(255, 193, 7, 0.3);
+  box-shadow: -9px 12px 10px #000000;
+  cursor: zoom-in;
   &:hover {
     //scale: 1.1;
   }
+}
+.zoomedIn {
+  scale: 1.8;
+  cursor: zoom-out;
 }
 .img-detail-main-bg {
   max-width: unset;
   max-height: unset;
   z-index: -1;
   filter: blur(8px);
+  scale: 1;
   //width: calc(100vw - 30px);
   //height: calc(100vh - 30px);
   padding: 30px;
@@ -176,6 +192,28 @@ i {
   right: 30px;
   translate: -30% -30%;
 }
+.website-router {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  translate: -30% -30%;
+  * {
+    transition: 0.4s ease-in-out;
+  }
+  a {
+    font-size: 1rem;
+    margin-right: 5px;
+  }
+  i {
+    font-size: unset;
+  }
+  &:hover {
+    * {
+      color: #ffc107;
+      opacity: 1;
+    }
+  }
+}
 .fa-chevron-left {
   left: 5px;
 }
@@ -187,6 +225,7 @@ i {
     width: calc(100vw - 60px);
     max-height: unset;
     max-width: unset;
+    scale: 1;
   }
   .img-detail-main-bg {
     width: 100vw;
