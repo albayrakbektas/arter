@@ -15,7 +15,7 @@
     <KnowledgeList :knowledge-list="knowledgeList" />
     <div class="divider" />
     <div class="pdf-container">
-      <a href="/cv.pdf" download="dene.pdf" class="download-pdf">
+      <a href="/cv.pdf" download="bektas-albayrak-cv.pdf" class="download-pdf">
         DOWNLOAD CV
         <i class="fa-solid fa-download"></i>
       </a>
