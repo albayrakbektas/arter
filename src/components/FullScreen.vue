@@ -2,20 +2,22 @@
   <div v-if="$store.state.isFullScreen" class="img-detail-main-container">
     <div class="from-left">
       <i @click="closeFullScreen" class="fa-solid fa-xmark"></i>
+      <i @click="navigateImages(-1)" class="fa-solid fa-chevron-left"></i>
       <img
-        v-for="(item, index) of imgList"
-        :src="item.imageSrc"
-        :alt="item.imageAlt"
-        :key="`${item}_${index}`"
+        :src="currentImage.imageSrc"
+        :alt="currentImage.imageAlt"
+        :key="currentImage.imageSrc"
         class="image"
+        ref="image"
       />
       <img
-        v-for="(item, index) of imgList"
-        :src="item.imageSrc"
-        :alt="item.imageAlt"
-        :key="index"
+        :src="currentImage.imageSrc"
+        :alt="currentImage.imageAlt"
+        :key="currentImage.imageSrc + '-bg'"
         class="img-detail-main img-detail-main-bg"
+        ref="image"
       />
+      <i @click="navigateImages(1)" class="fa-solid fa-chevron-right"></i>
     </div>
   </div>
 </template>
@@ -26,20 +28,46 @@ export default {
   components: {},
   data() {
     return {
-      imgList: [],
+      index: 0,
+      currentImage: null,
     };
   },
   mounted() {
-    this.imgList = this.$store.state.fullScreenImages;
+    console.log(this.getFullScreenImages);
+    this.currentImage = this.getFullScreenImages[this.index];
+  },
+  computed: {
+    getFullScreenImages() {
+      return this.$store.getters.getFullScreenImages;
+    },
   },
   watch: {
-    "$store.state.fullScreenImages": function () {
-      this.imgList = this.$store.state.fullScreenImages;
+    "$store.state.fullScreenImages": function (val) {
+      this.currentImage = val[0];
+      console.log(val[0]);
+    },
+    index: function (val) {
+      console.log(val);
+      this.currentImage = this.$store.state.fullScreenImages[val];
     },
   },
   methods: {
     changeZoom() {
       this.isZoom = !this.isZoom;
+    },
+    navigateImages(direction) {
+      const arrayLength = this.$store.state.fullScreenImages.length;
+      if (direction === 1) {
+        this.index++;
+        if (this.index >= arrayLength) {
+          this.index = 0;
+        }
+      } else if (direction === -1) {
+        this.index--;
+        if (this.index < 0) {
+          this.index = arrayLength - 1;
+        }
+      }
     },
     closeFullScreen() {
       this.$store.state.isFullScreen = false;
@@ -50,7 +78,7 @@ export default {
 
 <style lang="scss" scoped>
 .from-left {
-  translate: -100% 0;
+  //translate: -100% 0;
 }
 .from-top {
   translate: 0 -100%;
@@ -60,7 +88,9 @@ export default {
 }
 .img-detail-main-container {
   position: fixed;
-  z-index: 99;
+  z-index: 9999;
+  padding: 15px;
+  box-sizing: border-box;
   top: 0;
   right: 0;
   bottom: 0;
@@ -93,19 +123,27 @@ img {
   translate: -50% -50%;
   scale: 1;
   transition: 0.6s ease-in-out;
-  height: 90vh;
+  max-height: 50vh;
+  max-width: 50vw;
+  border: 1px solid rgba(255, 193, 7, 0.3);
   &:hover {
     //scale: 1.1;
   }
 }
 .img-detail-main-bg {
+  max-width: unset;
+  max-height: unset;
   z-index: -1;
   filter: blur(8px);
-  width: 90vw;
-  height: 90vh;
-  translate: 5% 5%;
+  //width: calc(100vw - 30px);
+  //height: calc(100vh - 30px);
+  padding: 30px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  //translate: 5% 5%;
   cursor: unset;
-  object-fit: cover;
+  object-fit: fill;
   &:hover {
     //scale: 1;
   }
@@ -129,6 +167,7 @@ i {
   z-index: 999999;
   &:hover {
     opacity: 1;
+    color: #ffc107;
   }
 }
 .fa-xmark {
@@ -145,11 +184,12 @@ i {
 }
 @media (max-width: 900px) {
   img {
-    width: 100vw;
+    width: calc(100vw - 60px);
+    max-height: unset;
+    max-width: unset;
   }
   .img-detail-main-bg {
     width: 100vw;
-    translate: 0 5%;
   }
 }
 </style>

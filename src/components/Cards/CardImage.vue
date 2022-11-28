@@ -1,6 +1,6 @@
 <template>
   <div class="card-image-container" :class="[card.isSlide ? 'mb-zero' : '']">
-    <div class="card-image-href">
+    <div @click="zoomImage(card)" class="card-image-href">
       <img class="card-image" :src="card.imageSrc" :alt="card.imageAlt" />
       <i class="fas fa-expand"></i>
     </div>
@@ -97,6 +97,7 @@ i.fa-expand {
   }
 }
 .card-image-container {
+  width: calc(100vw - 30px);
   position: relative;
   z-index: 999;
   background-color: #20202a;
@@ -114,6 +115,7 @@ i.fa-expand {
     height: calc((450px - 30px) / 2) !important;
   }
   .card-image-container {
+    width: unset;
     position: relative;
     z-index: 999;
     background-color: #20202a;

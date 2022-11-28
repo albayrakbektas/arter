@@ -603,7 +603,11 @@ export default new Vuex.Store({
       },
     ],
   },
-  getters: {},
+  getters: {
+    getFullScreenImages(state) {
+      return state.fullScreenImages;
+    },
+  },
   mutations: {},
   actions: {},
   modules: {},
