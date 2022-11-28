@@ -87,10 +87,17 @@ export default {
   }
 }
 .card-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
   padding: 30px;
   margin-bottom: 30px;
   position: relative;
+}
+@media (max-width: 500px) {
+  .card-container {
+    margin-bottom: 0;
+  }
 }
 .card-after::after {
   position: absolute;

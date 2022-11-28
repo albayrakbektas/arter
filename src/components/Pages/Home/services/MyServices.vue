@@ -1,7 +1,9 @@
 <template>
   <div class="row">
     <h4>My Services</h4>
-    <CardMain v-for="(item, index) of cardList" :card="item" :key="index" />
+    <div v-for="(item, index) of cardList" :key="index" class="asdf">
+      <CardMain :card="item" />
+    </div>
   </div>
 </template>
 
@@ -16,19 +18,17 @@ export default {
         {
           title: "Web Development",
           content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.",
+            "I use Javascript, Vue.js, Node.js and Firebase for mobile Development",
           href: "contact",
         },
         {
           title: "Mobile Development",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.",
+          content: "I use Flutter for mobile development",
           href: "contact",
         },
         {
           title: "UI Testing",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.",
+          content: "I use Jest and Puppeteer for website's ui testing.",
           href: "contact",
         },
       ],
@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.asdf {
+  height: 100%;
+}
 .row {
   grid-auto-rows: auto;
 }

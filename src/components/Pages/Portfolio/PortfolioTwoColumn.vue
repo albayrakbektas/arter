@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-top: 15px">
     <router-link to="/portfolio">My Projects</router-link>
     <div ref="row" class="row">
       <CardImage
