@@ -2,7 +2,6 @@
   <LayoutPage>
     <FirstSection />
     <MyServices />
-    <PortfolioRouters />
     <PortfolioTwoColumn />
     <HistoryGrid />
     <ContactGrid />
@@ -15,7 +14,6 @@ import FirstSection from "@/components/Pages/Home/top/FirstSection";
 import MyServices from "@/components/Pages/Home/services/MyServices";
 import HistoryGrid from "@/components/Pages/History/HistoryGrid";
 import ContactGrid from "@/components/Pages/Contact/ContactGrid";
-import PortfolioRouters from "@/components/Pages/Portfolio/PortfolioRouters";
 import PortfolioTwoColumn from "@/components/Pages/Portfolio/PortfolioTwoColumn";
 export default {
   name: "OnePageView",
@@ -25,7 +23,6 @@ export default {
     MyServices,
     FirstSection,
     LayoutPage,
-    PortfolioRouters,
     PortfolioTwoColumn,
   },
   mounted() {

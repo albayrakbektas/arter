@@ -26,6 +26,8 @@ export default {
 <style lang="scss" scoped>
 .row {
   display: block;
+  margin: 0 0 15px;
+  padding: 0;
 }
 h4 {
   font-size: 17px;
@@ -37,6 +39,8 @@ h4 {
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     column-gap: 30px;
+    margin: 0 -15px 15px;
+    padding: 0 30px;
   }
   h4 {
     text-align: left;

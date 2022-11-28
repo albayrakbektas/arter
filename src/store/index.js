@@ -5,58 +5,25 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    localLanguage: "tr",
+    en: { ARTER_DESCRIPTION: "CCCCC" },
+    tr: { ARTER_DESCRIPTION: "TRRTRTRTRTR" },
     loadingPage: true,
     isFullScreen: false,
     fullScreenImages: [],
     isDesktopView: window.innerWidth >= 900,
     layoutGrid: "",
-    singlePortfolioPage: true,
     isLeftMenuActive: false,
     isRightMenuActive: false,
     isRightMenuNotActive: true,
     isSubItems: false,
     isSubItem: false,
     isOnePage: false,
-    xSlideIndex: 0,
-    xPosition: 0,
-    projects: [
-      {
-        title: "Arter",
-        images: [],
-        description: "",
-        orderDate: "",
-        finalDate: "",
-        status: "",
-        client: "",
-        location: "",
-      },
-    ],
-    filterLinks: [
-      // {
-      //   content: "All Categories",
-      //   dataFilter: "*",
-      // },
-      // {
-      //   content: "Web Templates",
-      //   dataFilter: ".webTemplates",
-      // },
-      // {
-      //   content: "Logos",
-      //   dataFilter: ".logos",
-      // },
-      // {
-      //   content: "Drawings",
-      //   dataFilter: ".drawings",
-      // },
-      // {
-      //   content: "UI Elements",
-      //   dataFilter: ".ui",
-      // },
-    ],
+    showingPortfolioCards: [],
     detailedProject: {
       header: {
         title: "Arter",
-        content: "Web Development",
+        content: "ARTER_DESCRIPTION",
       },
       card: {
         title: "Description",
@@ -127,7 +94,6 @@ export default new Vuex.Store({
       dataFilter: ".webTemplates",
       buttonContent: "Read more",
     },
-    showingPortfolioCards: [],
     portfolioCards: [
       {
         header: {

@@ -15,6 +15,8 @@ export default {
   },
   methods: {
     changeLangAvatar(e) {
+      this.$store.state.localLanguage = this.language.toLowerCase();
+      console.log(this.$store.state.localLanguage);
       document
         .querySelector(".lang-avatar-active")
         .classList.remove("lang-avatar-active");

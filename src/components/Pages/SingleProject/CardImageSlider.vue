@@ -77,4 +77,10 @@ export default {
 .pd {
   padding: 0 15px 0 0;
 }
+@media (max-width: 500px) {
+  .slider-row {
+    width: calc(100vw - 30px);
+    margin: 0;
+  }
+}
 </style>

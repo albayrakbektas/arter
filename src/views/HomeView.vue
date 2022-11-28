@@ -3,7 +3,6 @@
     <FirstSection />
     <MyServices />
     <PortfolioTwoColumn />
-    <!--    <RecommendationCards :header="header" />-->
   </LayoutPage>
 </template>
 
@@ -19,6 +18,9 @@ export default {
     LayoutPage,
     MyServices,
     FirstSection,
+  },
+  mounted() {
+    console.log(localStorage);
   },
   data() {
     return {

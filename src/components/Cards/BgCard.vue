@@ -57,8 +57,8 @@ h1 {
 }
 .bg-img {
   background-image: url("../../assets/img/home/bg.jpeg");
-  left: 30px;
-  right: 30px;
+  left: 15px;
+  right: 15px;
 }
 .overlay {
   position: relative;
@@ -105,6 +105,8 @@ p {
     position: relative;
   }
   .bg-img {
+    left: 30px;
+    right: 30px;
   }
   .row-container {
     justify-content: center;

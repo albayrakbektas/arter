@@ -59,7 +59,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-  padding: 30px;
+  padding: 30px 15px;
   a {
     font-size: 10px;
     letter-spacing: 1.5px;
@@ -87,6 +87,9 @@ export default {
   .link-yellow {
     color: #ffc107;
     cursor: pointer;
+    i {
+      vertical-align: middle;
+    }
   }
 }
 @media (min-width: 900px) {

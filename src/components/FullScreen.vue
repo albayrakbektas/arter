@@ -42,7 +42,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$store.state.detailedProject);
     this.currentImage = this.getFullScreenImages[this.index];
   },
   computed: {
@@ -53,10 +52,8 @@ export default {
   watch: {
     "$store.state.fullScreenImages": function (val) {
       this.currentImage = val[0];
-      console.log(val[0]);
     },
     index: function (val) {
-      console.log(val);
       this.currentImage = this.$store.state.fullScreenImages[val];
     },
   },

@@ -2,10 +2,6 @@
   <LayoutPage>
     <div class="row">
       <PublicationHeader
-        v-if="
-          this.$store.state.layoutGrid === 'single-project-two' ||
-          'single-project'
-        "
         :card="$store.state.detailedProject.header"
         class="pd header-width"
       />
@@ -115,11 +111,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.pd {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 .row {
   justify-content: unset;
+  margin-bottom: 15px;
 }
 .rel-row {
   position: relative !important;
+  padding: 0 15px;
   h1 {
     font-weight: 800;
   }
@@ -136,6 +138,10 @@ export default {
   width: calc(100% - 30px);
 }
 @media (min-width: 900px) {
+  .pd {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+  }
   .mt {
     margin-top: 0 !important;
   }
