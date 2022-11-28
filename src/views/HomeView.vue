@@ -1,14 +1,12 @@
 <template>
   <LayoutPage>
     <FirstSection />
-    <MyServices />
     <PortfolioTwoColumn />
   </LayoutPage>
 </template>
 
 <script>
 import FirstSection from "@/components/Pages/Home/top/FirstSection";
-import MyServices from "@/components/Pages/Home/services/MyServices";
 import LayoutPage from "@/components/Layouts/LayoutPage";
 import PortfolioTwoColumn from "@/components/Pages/Portfolio/PortfolioTwoColumn";
 export default {
@@ -16,7 +14,6 @@ export default {
   components: {
     PortfolioTwoColumn,
     LayoutPage,
-    MyServices,
     FirstSection,
   },
   mounted() {
